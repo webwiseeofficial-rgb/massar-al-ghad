@@ -50,7 +50,7 @@ form .btn{justify-self:start}#msg{font-weight:700;color:var(--blue)}
 html[dir=rtl] .top>div{padding:8px 18px 8px 10px}
 .top nav{display:flex;gap:22px;margin-inline-end:auto;margin-inline-start:20px;font-weight:700;color:var(--mut)}.top nav a{text-decoration:none}.top nav a:hover{color:var(--blue)}
 .top .brand{font-size:1.05rem}main{padding-top:16px;display:grid;gap:16px}
-footer{text-align:center;color:var(--mut);font-size:.85rem;padding:28px 0}
+
 /* admin */
 body.adm{background:#C9D1E1;padding:28px 16px}
 .login{max-width:380px;margin:12vh auto;display:grid;gap:12px}
@@ -109,7 +109,7 @@ a.go{display:grid;place-items:center;text-decoration:none}
 .steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--tint);color:var(--blue);display:grid;place-items:center;font-weight:800}
 .steps b{display:block}.steps small{color:var(--mut)}
 a.pcard{text-decoration:none}
-footer{display:flex;gap:10px 22px;justify-content:center;flex-wrap:wrap;padding:32px var(--gx)}footer nav{display:flex;gap:18px;flex-wrap:wrap}footer a{text-decoration:none}footer a:hover{color:var(--blue)}
+
 @media(max-width:1000px){.banner.hero,.two.wide,.two.map{grid-template-columns:1fr}}
 @media(max-width:900px){
  .top>div{flex-wrap:wrap;border-radius:26px;gap:10px}
@@ -121,3 +121,41 @@ footer{display:flex;gap:10px 22px;justify-content:center;flex-wrap:wrap;padding:
 
 .logo-img{height:42px;width:auto;display:block}.top .logo-img{height:40px}
 .foot-logo{height:56px;width:auto}
+
+/* ---- sizing: roomier, not huge ---- */
+body{font-size:1rem;line-height:1.65}
+main{gap:clamp(18px,2vw,28px);padding-top:clamp(18px,2vw,28px)}
+.cards4{margin:0}
+.panel{padding:clamp(24px,2.8vw,44px)}
+h2{font-size:clamp(1.6rem,2.1vw,2.1rem);margin-bottom:clamp(20px,2vw,30px)}h3{font-size:1.2rem}
+.top{margin-top:clamp(12px,1.4vw,22px)}
+.top>div{padding:12px 14px 12px 26px;gap:clamp(14px,2vw,28px)}html[dir=rtl] .top>div{padding:12px 26px 12px 14px}
+.top .logo-img{height:50px}.top .brand{font-size:1.2rem;gap:12px}.top nav{font-size:1.02rem;gap:clamp(18px,2.2vw,32px)}
+.pill{padding:12px 22px}.btn{padding:14px 28px;font-size:1rem}
+.btn.dark{padding:9px 9px 9px 28px}html[dir=rtl] .btn.dark{padding:9px 28px 9px 9px}.btn.dark b{width:40px;height:40px}
+.banner{padding:clamp(32px,5vw,80px)}
+.banner p{font-size:1.1rem;margin:18px 0 32px}
+.banner.hero{min-height:clamp(380px,50vh,600px)}
+.banner.slim{padding:clamp(34px,4.5vw,72px);min-height:clamp(170px,22vh,250px);display:flex;flex-direction:column;justify-content:center}
+.banner.slim p{margin:12px 0 0}
+.cats{gap:16px}.cat{padding:clamp(20px,2vw,32px)}.cat i{width:56px;height:56px;font-size:1.7rem;margin-bottom:14px}.cat b{font-size:1.15rem}
+.pcard{padding:clamp(18px,1.8vw,28px);gap:18px}.pcard i{width:58px;height:58px;font-size:1.5rem;border-radius:16px}.pcard b{font-size:1.05rem}
+.grid{gap:clamp(16px,1.8vw,26px)}
+.course{padding:16px 16px 22px}.art{height:clamp(140px,11vw,180px);font-size:3rem;margin-bottom:16px}.course h4{font-size:1.15rem;margin:12px 0 4px}.tag{padding:4px 14px}
+.foot{margin-top:18px;padding-top:16px}.go{width:40px;height:40px}
+.chips{gap:10px;margin-bottom:28px}.chip{padding:11px 24px;font-size:1rem}
+form{gap:20px}label{gap:8px;font-size:.95rem}input,select,textarea{padding:15px 18px;font-size:1rem}
+.why{gap:clamp(20px,3vw,48px)}
+.cta{padding:clamp(28px,3.6vw,56px)}
+.steps{gap:24px}.steps li::before{width:40px;height:40px}
+/* footer */
+footer{margin-top:clamp(36px,4vw,64px);background:#fff;border-radius:34px 34px 0 0;color:var(--ink)}
+.fin{max-width:1680px;margin:auto;padding:clamp(40px,5vw,72px) var(--gx) 24px}
+.fgrid{display:grid;gap:clamp(28px,4vw,64px);grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+.fbrand p{color:var(--mut);margin-top:16px;max-width:30em}.foot-logo{height:72px;width:auto}
+footer h4{font-size:1.05rem;font-weight:800;margin-bottom:16px}
+footer .fcol{display:grid;gap:12px;align-content:start;color:var(--mut)}
+footer a{text-decoration:none;color:var(--mut);font-weight:600}footer a:hover{color:var(--blue)}
+.fbar{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-top:clamp(32px,4vw,56px);padding-top:22px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}
+@media(max-width:1000px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
+@media(max-width:520px){.fgrid{grid-template-columns:1fr}.top .logo-img{height:44px}.btn{padding:12px 20px}.banner.slim{min-height:0}}
