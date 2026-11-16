@@ -7,7 +7,7 @@ document.getElementById('site-header').innerHTML=`<div>
   <a class="brand" href="index.html"><img class="logo-img" src="logo-mark.png" alt=""><span><span class="fr">Massar Al Ghad</span><span class="ar">مسار الغد</span></span></a>
   <nav aria-label="Menu">${links(1)}</nav>
   <button class="pill" id="lang" type="button"><span class="fr">العربية</span><span class="ar">Français</span></button>
-  <a class="btn" href="tel:+213541896856" dir="ltr">📞 +213 541 89 68 56</a></div>`;
+  <a class="btn" href="tel:+213541896856" dir="ltr" aria-label="+213 541 89 68 56">📞<span class="num"> +213 541 89 68 56</span></a></div>`;
 const B=(f,a)=>`<span class="fr">${f}</span><span class="ar">${a}</span>`;
 document.getElementById('site-footer').innerHTML=`<div class="fin"><div class="fgrid">
  <div class="fbrand"><img class="foot-logo" src="logo.png" alt="Massar Al Ghad"><p>${B('École de formation et de perfectionnement à Hussein Dey, Alger : informatique, secrétariat, gestion et langues.','مدرسة للتكوين والتدريب بحسين داي، الجزائر العاصمة: الإعلام الآلي، الأمانة، التسيير واللغات.')}</p></div>
