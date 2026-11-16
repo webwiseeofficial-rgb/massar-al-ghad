@@ -4,3 +4,7 @@ Static site, FR/AR (Plus Jakarta Sans + Almarai), ready for Vercel. Pages: `inde
 2. Vercel: import the folder (framework "Other", no build).
 3. Without Supabase, the form opens WhatsApp and admin.html shows demo data.
 Courses in `common.js` are samples: edit them or use the `courses` table.
+
+## Pages (public)
+`index.html` (accueil) · `formations.html` · `acces.html` · `inscription.html` · `contact.html`, plus `admin.html`.
+Header/footer menu is shared: edit `layout.js`. Courses: `common.js`. Layout width: `--gx` and `.wrap` in `style.css`.

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l;document.documentElement.dir=l=='ar'?'rtl':'ltr'}}catch(e){}</script>
+<title>Inscription | Massar Al Ghad | مدرسة مسار الغد</title>
+<meta name="description" content="Réservez votre place à l’école Massar Al Ghad, Hussein Dey. | احجز مكانك في مدرسة مسار الغد.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏫</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="site-header"></header>
+<main class="wrap">
+<section class="banner slim"><i class="spark s1"></i><i class="spark s2"></i><h1><span class="fr">Réservez votre place</span><span class="ar">احجز مكانك</span></h1><p><span class="fr">Remplissez le formulaire : nous vous rappelons très vite.</span><span class="ar">املأ الاستمارة وسنتصل بك قريبًا.</span></p></section>
+<section class="two wide"><div class="panel" id="inscription"><form id="form">
+<label><span class="fr">Nom et prénom</span><span class="ar">الاسم واللقب</span><input name="name" required minlength="2" autocomplete="name"></label>
+<label><span class="fr">Téléphone</span><span class="ar">رقم الهاتف</span><input name="phone" type="tel" required minlength="8" dir="ltr" autocomplete="tel"></label>
+<label><span class="fr">E-mail (facultatif)</span><span class="ar">البريد الإلكتروني (اختياري)</span><input name="email" type="email" dir="ltr"></label>
+<label><span class="fr">Formation</span><span class="ar">التكوين</span><select name="course" id="course"></select></label>
+<label class="full"><span class="fr">Message (facultatif)</span><span class="ar">رسالة (اختياري)</span><textarea name="message" rows="3"></textarea></label>
+<button class="btn dark" type="submit"><span class="fr">Envoyer ma demande</span><span class="ar">أرسل طلبي</span><b class="arr">→</b></button><p id="msg" role="status"></p></form></div>
+<div class="panel"><h2><span class="fr">Comment ça marche</span><span class="ar">كيف يتم ذلك</span></h2><ol class="steps">
+<li><div><b><span class="fr">Vous envoyez votre demande</span><span class="ar">ترسل طلبك</span></b><small><span class="fr">Nom, téléphone et formation souhaitée.</span><span class="ar">الاسم، الهاتف والتكوين المطلوب.</span></small></div></li>
+<li><div><b><span class="fr">Nous vous rappelons</span><span class="ar">نتصل بك</span></b><small><span class="fr">Très vite, pour répondre à vos questions.</span><span class="ar">في أقرب وقت للإجابة عن أسئلتك.</span></small></div></li>
+<li><div><b><span class="fr">Vous choisissez votre créneau</span><span class="ar">تختار الوقت المناسب</span></b><small><span class="fr">Étudiants, salariés, demandeurs d’emploi : on s’adapte.</span><span class="ar">طلبة، موظفون، باحثون عن عمل: نتكيف معك.</span></small></div></li></ol></div></section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script><script src="layout.js"></script><script src="common.js"></script><script src="app.js"></script>
+</body></html>
