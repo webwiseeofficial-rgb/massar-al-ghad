@@ -16,7 +16,7 @@ function render(){const l=LANG,x=X[l],n=s=>ROWS.filter(r=>r.status==s).length,to
  $('#bars').innerHTML=days.map(a=>`<div class="col"><i class="${a.n==mx&&a.n?'hi':''}" style="height:${a.n/mx*100}%"></i>${a.d.toLocaleDateString(loc(),{weekday:'short'})}</div>`).join('');
  const cnt={};ROWS.forEach(r=>cnt[r.course]=(cnt[r.course]||0)+1);
  const rank=COURSES.map(c=>({c,n:cnt[c.fr]||0})).sort((a,b)=>b.n-a.n);
- $('#popg').innerHTML=rank.slice(0,3).map(({c,n})=>{const k=CATS[c.cat];return `<article class="course"><div class="art" style="background:linear-gradient(135deg,${k.c},${k.c2})">${c.ico}<i class="spark"></i></div><span class="tag" style="--t:${k.c}">${k[l]}</span><h4>${c[l]}</h4><div class="foot"><b>${n}${x.n}</b><span>${dur(c.months,l)}</span></div></article>`}).join('');
+ $('#popg').innerHTML=rank.slice(0,3).map(({c,n})=>{const k=CATS[c.cat];return `<article class="course"><div class="art" style="background:linear-gradient(135deg,${k.c},${k.c2})">${c.ico}</div><span class="tag" style="--t:${k.c}">${k[l]}</span><h4>${c[l]}</h4><div class="foot"><b>${n}${x.n}</b><span>${dur(c.months,l)}</span></div></article>`}).join('');
  $('#top3').innerHTML=rank.slice(0,3).map(({c,n})=>`<div class="row"><span class="av">${c.ico}</span><div><b>${c[l]}</b><small>${n}${x.n}</small></div><button type="button" data-q="${c.fr}">${x.see}</button></div>`).join('');
  const q=Q.toLowerCase(),rows=ROWS.filter(r=>(r.name+r.phone+r.course).toLowerCase().includes(q));
  $('#tbl').innerHTML=rows.length?`<table><tr>${x.th.map(h=>`<th>${h}</th>`).join('')}</tr>`+rows.map(r=>{const k=CATS[(COURSES.find(c=>c.fr==r.course)||{cat:'info'}).cat],ph=(r.phone||'').replace(/\D/g,'').replace(/^0/,'213');
