@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Massar Al Ghad | مدرسة مسار الغد للتكوين والتدريب</title>
+<meta name="description" content="École de formation à Hussein Dey, Alger : informatique, secrétariat, gestion, langues. | مدرسة تكوين وتدريب بحسين داي، الجزائر العاصمة.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏫</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="brand" href="#top"><span class="logo">م</span>
+    <span><span class="fr">Massar Al Ghad</span><span class="ar">مدرسة مسار الغد</span></span></a>
+  <nav>
+    <a href="#formations"><span class="fr">Formations</span><span class="ar">التكوينات</span></a>
+    <a href="#acces"><span class="fr">Accès</span><span class="ar">كيف تصلنا</span></a>
+    <a href="#inscription"><span class="fr">Inscription</span><span class="ar">التسجيل</span></a>
+  </nav>
+  <button class="lang" id="lang" type="button"><span class="fr">العربية</span><span class="ar">Français</span></button>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <h1><span class="fr">Votre chemin vers un métier commence à Hussein Dey.</span><span class="ar">طريقك نحو مهنة يبدأ من حسين داي.</span></h1>
+    <p><span class="fr">École de formation et de perfectionnement : informatique, secrétariat, gestion et langues. Des cours pratiques, au cœur d’Alger, à deux pas des transports.</span><span class="ar">مدرسة للتكوين والتدريب: الإعلام الآلي، الأمانة، التسيير واللغات. دروس تطبيقية في قلب الجزائر العاصمة، بالقرب من وسائل النقل.</span></p>
+    <a class="btn p" href="#inscription"><span class="fr">Je m’inscris</span><span class="ar">سجّل الآن</span></a>
+    <a class="btn g" href="tel:+213541896856" dir="ltr">+213 541 89 68 56</a>
+  </div>
+  <div class="route" id="acces"><div class="wrap">
+    <p class="rt"><span class="fr">Votre trajet jusqu’à l’école</span><span class="ar">مسارك إلى المدرسة</span></p>
+    <ol class="stops">
+      <li style="--i:0">🚈 <span class="fr">Tramway<br>Tripoli</span><span class="ar">ترامواي<br>طرابلس</span></li>
+      <li style="--i:1">🚇 <span class="fr">Métro</span><span class="ar">المترو</span></li>
+      <li style="--i:2">🚆 <span class="fr">Gare</span><span class="ar">محطة القطار</span></li>
+      <li style="--i:3"><b><span class="fr">Massar<br>Al Ghad</span><span class="ar">مسار<br>الغد</span></b></li>
+    </ol>
+  </div></div>
+</section>
+
+<section class="sec" id="formations"><div class="wrap">
+  <h2><span class="fr">Nos formations</span><span class="ar">تكويناتنا</span></h2>
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="sec alt"><div class="wrap why">
+  <div><h3><span class="fr">On pratique dès le premier jour</span><span class="ar">نمارس منذ اليوم الأول</span></h3>
+    <p><span class="fr">Moins de théorie, plus de manipulation sur poste.</span><span class="ar">نظرية أقل، وتطبيق أكثر على الحاسوب.</span></p></div>
+  <div><h3><span class="fr">Des horaires qui s’adaptent</span><span class="ar">أوقات تناسبك</span></h3>
+    <p><span class="fr">Étudiants, salariés, demandeurs d’emploi : demandez votre créneau.</span><span class="ar">طلبة، موظفون، باحثون عن عمل: اطلب الوقت المناسب لك.</span></p></div>
+  <div><h3><span class="fr">Facile d’accès</span><span class="ar">سهلة الوصول</span></h3>
+    <p><span class="fr">Tramway, métro et gare à proximité.</span><span class="ar">ترامواي، مترو ومحطة قطار بالقرب منا.</span></p></div>
+</div></section>
+
+<section class="sec" id="inscription"><div class="wrap narrow">
+  <h2><span class="fr">Réservez votre place</span><span class="ar">احجز مكانك</span></h2>
+  <form id="form">
+    <label><span class="fr">Nom et prénom</span><span class="ar">الاسم واللقب</span><input name="name" required minlength="2" autocomplete="name"></label>
+    <label><span class="fr">Téléphone</span><span class="ar">رقم الهاتف</span><input name="phone" type="tel" required minlength="8" dir="ltr" autocomplete="tel"></label>
+    <label><span class="fr">E-mail (facultatif)</span><span class="ar">البريد الإلكتروني (اختياري)</span><input name="email" type="email" dir="ltr" autocomplete="email"></label>
+    <label><span class="fr">Formation souhaitée</span><span class="ar">التكوين المطلوب</span><select name="course" id="course"></select></label>
+    <label class="full"><span class="fr">Message (facultatif)</span><span class="ar">رسالة (اختياري)</span><textarea name="message" rows="3"></textarea></label>
+    <button class="btn p" type="submit"><span class="fr">Envoyer ma demande</span><span class="ar">أرسل طلبي</span></button>
+    <p id="msg" role="status"></p>
+  </form>
+</div></section>
+
+<section class="sec alt" id="contact"><div class="wrap contact">
+  <div>
+    <h2><span class="fr">Nous trouver</span><span class="ar">موقعنا</span></h2>
+    <p class="addr"><span class="fr">🏫 École de Hussein Dey, en face de la station de tramway Tripoli (mosquée), près de la gare et du métro, juste à côté de la préfecture de police (14), Alger.</span><span class="ar">🏫 مقر مدرسة حسين داي، أمام محطة ترامواي طرابلس (مسجد) 🚈، وقريب من محطة القطار 🚆 والمترو، بالضبط جانب محافظة الشرطة (14)، الجزائر العاصمة.</span></p>
+    <p><a class="btn p" href="tel:+213541896856" dir="ltr">📞 +213 541 89 68 56</a>
+    <a class="btn d" href="https://wa.me/213541896856" target="_blank" rel="noopener">WhatsApp</a></p>
+  </div>
+  <iframe title="Map" loading="lazy" src="https://www.google.com/maps?q=Tramway+Tripoli+Hussein+Dey+Alger&output=embed"></iframe>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 <span class="fr">Massar Al Ghad, école de formation et de formation continue</span><span class="ar">مدرسة مسار الغد للتكوين والتدريب</span></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
