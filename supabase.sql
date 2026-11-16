@@ -1,5 +1,5 @@
 -- Supabase > SQL Editor. Replace admin@example.com with YOUR admin e-mail (twice below).
-create table courses(id bigint generated always as identity primary key,cat text check(cat in('info','sec','ges','lan')),ico text,fr text,ar text,tools text,months int,sort int default 0);
+create table courses(id bigint generated always as identity primary key,cat text check(cat in('info','sec','ges','lan')),ico text,img text,fr text,ar text,tools text,months int,sort int default 0);
 create table registrations(id bigint generated always as identity primary key,created_at timestamptz default now(),name text not null,phone text not null,email text,course text,message text,lang text,status text default 'new' check(status in('new','called','ok')));
 alter table courses enable row level security;
 alter table registrations enable row level security;
