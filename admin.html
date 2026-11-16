@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin | Massar Al Ghad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="adm">
+<form class="panel login" id="login" hidden>
+  <a class="brand" href="index.html"><span class="logo">✦</span><span><span class="fr">Massar Al Ghad</span><span class="ar">مسار الغد</span></span></a>
+  <h3><span class="fr">Connexion administrateur</span><span class="ar">دخول المسؤول</span></h3>
+  <input name="email" type="email" placeholder="E-mail" required dir="ltr"><input name="password" type="password" placeholder="••••••••" required dir="ltr">
+  <button class="btn dark" type="submit"><span class="fr">Se connecter</span><span class="ar">دخول</span><b class="arr">→</b></button>
+  <p id="lmsg" role="status" style="color:#D6336C;font-weight:700"></p>
+</form>
+<div class="frame" id="app" hidden>
+  <aside class="side">
+    <a class="brand" href="index.html" style="padding:0 8px 8px"><span class="logo">✦</span><span><span class="fr">Massar</span><span class="ar">مسار</span></span></a>
+    <small><span class="fr">Aperçu</span><span class="ar">نظرة عامة</span></small>
+    <a class="on" href="#top">▦ <span class="fr">Tableau de bord</span><span class="ar">لوحة التحكم</span></a>
+    <a href="#reg">✉ <span class="fr">Inscriptions</span><span class="ar">التسجيلات</span></a>
+    <a href="#pop">▤ <span class="fr">Formations</span><span class="ar">التكوينات</span></a>
+    <small><span class="fr">Réglages</span><span class="ar">الإعدادات</span></small>
+    <a href="index.html">⌂ <span class="fr">Voir le site</span><span class="ar">عرض الموقع</span></a>
+    <a class="out" href="#" id="out">↩ <span class="fr">Déconnexion</span><span class="ar">خروج</span></a>
+  </aside>
+  <main id="top">
+    <div class="bar"><input class="search" id="q" type="search" placeholder="🔍 …"><button class="pill" id="lang" type="button"><span class="fr">العربية</span><span class="ar">Français</span></button><div class="me"><span class="av">AD</span><span>Admin</span></div></div>
+    <section class="banner" style="padding:34px">
+      <i class="spark s1"></i><i class="spark s2"></i>
+      <h1 style="font-size:clamp(1.5rem,3vw,2.1rem)"><span class="fr">Gérez les inscriptions de l’école en un coup d’œil.</span><span class="ar">تابع تسجيلات المدرسة بنظرة واحدة.</span></h1>
+      <p id="demo" hidden><span class="fr">Mode démo : données d’exemple. Configurez Supabase pour voir les vraies inscriptions.</span><span class="ar">وضع تجريبي: بيانات تجريبية. فعّل Supabase لعرض التسجيلات الحقيقية.</span></p>
+      <a class="btn dark" href="#reg"><span class="fr">Voir les inscriptions</span><span class="ar">عرض التسجيلات</span><b class="arr">→</b></a>
+    </section>
+    <div class="stats" id="stats"></div>
+    <section class="sec" id="pop"><h3><span class="fr">Formations les plus demandées</span><span class="ar">التكوينات الأكثر طلبًا</span></h3><div class="panel"><div class="grid" id="popg"></div></div></section>
+    <section class="sec" id="reg"><h3><span class="fr">Inscriptions récentes</span><span class="ar">آخر التسجيلات</span></h3><div class="panel tbl" id="tbl"></div></section>
+  </main>
+  <aside class="right">
+    <div class="panel ringbox"><h3><span class="fr">Statistiques</span><span class="ar">إحصائيات</span></h3><div class="ring" id="ring"><b></b></div><p id="hello" style="font-weight:800"></p></div>
+    <div class="panel"><h3 id="wk" style="margin-bottom:12px"></h3><div class="bars" id="bars"></div></div>
+    <div class="panel"><h3><span class="fr">Top formations</span><span class="ar">أفضل التكوينات</span></h3><div id="top3"></div></div>
+  </aside>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script><script src="common.js"></script><script src="admin.js"></script>
+</body></html>
