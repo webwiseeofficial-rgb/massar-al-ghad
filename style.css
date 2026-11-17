@@ -266,3 +266,6 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
 .top .bname b{font-size:1.05rem;font-weight:700}
 .top .bname small{font-size:.9rem;font-weight:400;color:var(--mut)}
 .top .bname small{color:#2B3044}
+/* hero: less empty space under the header */
+.hero-in{padding-top:clamp(22px,2.6vw,44px);padding-bottom:clamp(96px,9vw,140px)}
+.hero-art{min-height:clamp(300px,26vw,400px)}
