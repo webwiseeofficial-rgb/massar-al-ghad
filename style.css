@@ -252,3 +252,9 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
  .seg{margin-inline-start:auto}
 }
 .seg button{line-height:1.2}
+/* balance: logo left, menu centred, Inscription + language on the right */
+@media(min-width:901px){
+ .top nav{margin-inline:auto}
+ .top .cta{margin-inline-start:0}
+ .seg{margin-inline-start:14px}
+}
