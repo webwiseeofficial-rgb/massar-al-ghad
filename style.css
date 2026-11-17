@@ -260,3 +260,9 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
 @media(max-width:1000px){.split{grid-template-columns:1fr}.split figure{min-height:240px}}
 .catrow{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}.catrow .cat{gap:14px;padding:12px}.catrow .cat img{width:68px;height:68px}
 @media(min-width:601px) and (max-width:1100px){.catrow{grid-template-columns:1fr 1fr}}
+
+/* brand: French name + Arabic name (regular weight) */
+.top .bname{display:grid;gap:1px;line-height:1.2}
+.top .bname b{font-size:1.05rem;font-weight:700}
+.top .bname small{font-size:.9rem;font-weight:400;color:var(--mut)}
+.top .bname small{color:#2B3044}
