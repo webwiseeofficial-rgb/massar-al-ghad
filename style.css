@@ -6,7 +6,7 @@ html[lang=ar] body,html[lang=ar] button,html[lang=ar] input,html[lang=ar] select
 html[lang=fr] .ar,html[lang=ar] .fr{display:none!important}
 a{color:inherit}button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.wrap{max-width:1760px;margin:auto;padding:0 var(--gx)}
+.wrap{max-width:none;margin:auto;padding:0 var(--gx)}
 .panel{background:#fff;border-radius:var(--r);padding:24px}
 h2{font-size:1.5rem;line-height:1.3;font-weight:800;margin-bottom:18px}h3{font-size:1.1rem;font-weight:800}
 .logo{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:1.1rem}
@@ -45,7 +45,7 @@ input,select,textarea{font:inherit;padding:11px 14px;border:1px solid var(--line
 form .btn{justify-self:start}#msg{font-weight:700;color:var(--blue)}
 .addr{margin:6px 0 16px}iframe{width:100%;height:230px;border:0;border-radius:16px;margin-top:14px}
 .why{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.why p{color:var(--mut)}
-.top{max-width:1760px;margin:14px auto 0;padding:0 var(--gx);position:sticky;top:10px;z-index:20}
+.top{max-width:none;margin:14px auto 0;padding:0 var(--gx);position:sticky;top:10px;z-index:20}
 .top>div{display:flex;align-items:center;gap:18px;background:#fff;border-radius:99px;padding:8px 10px 8px 18px;box-shadow:0 6px 24px rgba(40,60,120,.08)}
 html[dir=rtl] .top>div{padding:8px 18px 8px 10px}
 .top nav{display:flex;gap:22px;margin-inline-end:auto;margin-inline-start:20px;font-weight:700;color:var(--mut)}.top nav a{text-decoration:none}.top nav a:hover{color:var(--blue)}
@@ -150,7 +150,7 @@ form{gap:20px}label{gap:8px;font-size:.95rem}input,select,textarea{padding:15px 
 .steps{gap:24px}.steps li::before{width:40px;height:40px}
 /* footer */
 footer{margin-top:clamp(36px,4vw,64px);background:#fff;border-radius:34px 34px 0 0;color:var(--ink)}
-.fin{max-width:1760px;margin:auto;padding:clamp(40px,5vw,72px) var(--gx) 24px}
+.fin{max-width:none;margin:auto;padding:clamp(40px,5vw,72px) var(--gx) 24px}
 .fgrid{display:grid;gap:clamp(28px,4vw,64px);grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
 .fbrand p{color:var(--mut);margin-top:16px;max-width:30em}.foot-logo{height:72px;width:auto}
 footer h4{font-size:1.05rem;font-weight:800;margin-bottom:16px}
@@ -171,13 +171,13 @@ main.wrap{padding-top:clamp(12px,1.2vw,18px)}
 
 /* ===== header + hero, modelled on the reference ===== */
 .top{position:sticky;top:0;max-width:none;margin:0;padding:0;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);z-index:30}
-.top>div,html[dir=rtl] .top>div{max-width:1760px;margin:auto;border-radius:0;box-shadow:none;background:none;padding:0 var(--gx);min-height:68px;gap:clamp(16px,2.4vw,40px)}
+.top>div,html[dir=rtl] .top>div{max-width:none;margin:auto;border-radius:0;box-shadow:none;background:none;padding:0 var(--gx);min-height:68px;gap:clamp(16px,2.4vw,40px)}
 .top .btn,.top .pill{border-radius:10px}.top .btn{padding:11px 22px}.top .pill{padding:9px 18px}
 .top nav{margin-inline-start:clamp(8px,2vw,32px)}
 .top nav a[aria-current=page]::after{bottom:-24px}
 main.wrap{padding-top:clamp(12px,1.2vw,18px)}body.home main.wrap{padding-top:0}
 .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#F8FAFF 0%,#ECF1FF 100%)}
-.hero-in{position:relative;max-width:1760px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(36px,4.5vw,76px) var(--gx) clamp(96px,9vw,150px)}
+.hero-in{position:relative;max-width:none;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(36px,4.5vw,76px) var(--gx) clamp(96px,9vw,150px)}
 .hero-text{position:relative;z-index:2}
 .pillbadge{display:inline-block;padding:7px 14px;border-radius:8px;background:var(--tint);color:var(--blue);font-weight:800;font-size:.85rem;margin-bottom:22px}
 .hero h1{font-size:clamp(2.2rem,4.2vw,4rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;max-width:14em}
@@ -218,3 +218,17 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
 .top nav a[aria-current=page]{font-weight:700;color:var(--blue)}
 .top .pill{font-weight:500}
 .top .btn{font-weight:600}
+
+/* ===== spacing + header modelled on the EPC reference ===== */
+:root{--gx:max(clamp(18px,9vw,140px),calc((100vw - 1240px)/2))}
+@media(max-width:700px){:root{--gx:20px}}
+.top nav{color:#2B3044}.top nav a[aria-current=page]{color:var(--ink)}
+.top .cta{background:var(--ink);color:#fff;border-radius:99px;padding:12px 26px;width:auto;height:auto;font-size:1rem;font-weight:600}
+.top .cta:hover{background:#262c4a}
+.seg{display:flex;gap:2px;padding:4px;border:1px solid var(--line);border-radius:99px;background:#fff}
+.seg button{border:0;background:none;padding:8px 16px;border-radius:99px;font:inherit;font-size:.9rem;font-weight:600;color:var(--mut);cursor:pointer;letter-spacing:.02em}
+.seg button:hover{color:var(--ink)}.seg button.on{background:var(--ink);color:#fff}
+@media(max-width:600px){.top .cta{padding:9px 16px;font-size:.9rem}.seg button{padding:6px 12px;font-size:.85rem}}
+@media(max-width:480px){.top .brand>span:last-child{display:none}}
+.hero-in{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+@media(max-width:1000px){.hero-in{grid-template-columns:1fr}}

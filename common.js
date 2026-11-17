@@ -18,5 +18,6 @@ const artIn=c=>c.img?`<img src="${c.img}" alt="" loading="lazy">`:c.ico;
 const dur=(m,l)=>l=='fr'?m+' mois':m==1?'شهر':m==2?'شهران':m+' أشهر';
 let LANG=localStorage.getItem('lang')||'fr';
 const sb=(window.CFG&&CFG.SUPABASE_URL&&window.supabase)?supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_ANON_KEY):null;
-function setLang(l){LANG=l;localStorage.setItem('lang',l);document.documentElement.lang=l;document.documentElement.dir=l=='ar'?'rtl':'ltr';window.render&&render()}
-$('#lang').onclick=()=>setLang(LANG=='fr'?'ar':'fr');
+function setLang(l){LANG=l;localStorage.setItem('lang',l);document.documentElement.lang=l;document.documentElement.dir=l=='ar'?'rtl':'ltr';document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on',b.dataset.lang==l));window.render&&render()}
+if($('#lang'))$('#lang').onclick=()=>setLang(LANG=='fr'?'ar':'fr');
+document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
