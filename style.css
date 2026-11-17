@@ -1,4 +1,4 @@
-:root{--gx:clamp(16px,4.2vw,80px);--blue:#3B63F5;--tint:#EAF0FF;--ink:#14182B;--mut:#7A8197;--bg:#F3F5FC;--line:#E6EAF5;--rose:#FDE8F1;--sky:#DDF1FB;--r:22px}
+:root{--gx:clamp(18px,6vw,112px);--blue:#3B63F5;--tint:#EAF0FF;--ink:#14182B;--mut:#7A8197;--bg:#F3F5FC;--line:#E6EAF5;--rose:#FDE8F1;--sky:#DDF1FB;--r:22px}
 *{box-sizing:border-box;margin:0}[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{font:500 .95rem/1.6 'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
