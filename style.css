@@ -291,3 +291,4 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
  #hmenu .seg{margin:16px 0 0;align-self:flex-start}
  #hmenu .seg button{padding:8px 20px;font-size:.85rem}
 }
+@media(max-width:900px){#hmenu .seg{align-self:center;margin-inline:auto}}
