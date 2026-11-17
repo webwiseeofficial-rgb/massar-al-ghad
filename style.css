@@ -232,3 +232,23 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
 @media(max-width:480px){.top .brand>span:last-child{display:none}}
 .hero-in{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
 @media(max-width:1000px){.hero-in{grid-template-columns:1fr}}
+/* ===== header fine-tuning to match the EPC measurements ===== */
+@media(min-width:601px){
+ .top nav{font-size:.94rem;font-weight:500}
+ .top nav a{font-weight:500;line-height:1.65}
+ .top nav a[aria-current=page]{font-weight:600}
+ .top nav a[aria-current=page]::after{bottom:-6px;height:3px}
+ .top .brand{font-size:1.05rem;font-weight:700}
+ .top .logo-img{height:38px}
+ .top .cta{font-size:.94rem;font-weight:500;line-height:1.25;padding:9px 20px}
+ .seg{padding:3px}
+ .seg button{font-size:.78rem;font-weight:600;line-height:1.2;padding:5px 12px;letter-spacing:.03em}
+ .seg button[data-lang=ar]{font-size:.85rem;font-weight:500;letter-spacing:0}
+}
+@media(min-width:901px){
+ .top>div,html[dir=rtl] .top>div{min-height:70px;gap:0}
+ .top nav{gap:27px;margin-inline-start:clamp(24px,5.8vw,75px);margin-inline-end:0}
+ .top .cta{margin-inline-start:27px}
+ .seg{margin-inline-start:auto}
+}
+.seg button{line-height:1.2}
