@@ -5,9 +5,16 @@ const N=[['index','Accueil','الرئيسية'],['apropos','À propos','من ن�
 const links=cls=>N.filter(n=>!(cls&&n[0]=='inscription')).map(([k,f,a])=>`<a href="${k}.html"${P==k&&cls?' aria-current="page"':''}><span class="fr">${f}</span><span class="ar">${a}</span></a>`).join('');
 document.getElementById('site-header').innerHTML=`<div>
   <a class="brand" href="index.html"><img class="logo-img" src="logo-mark.png" alt=""><span class="bname"><b>Massar Al Ghad</b><small>مسار الغد</small></span></a>
-  <nav aria-label="Menu">${links(1)}</nav>
+  <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="hmenu"><span class="blines"><i></i><i></i><i></i></span></button>
+  <div id="hmenu"><nav aria-label="Menu">${links(1)}</nav>
   <a class="btn cta" href="inscription.html"><span class="fr">Inscription</span><span class="ar">التسجيل</span></a>
-  <div class="seg" role="group" aria-label="Langue / اللغة"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="ar">عربية</button></div></div>`;
+  <div class="seg" role="group" aria-label="Langue / اللغة"><button type="button" data-lang="fr">FR</button><button type="button" data-lang="ar">عربية</button></div></div></div>`;
+const bg=document.getElementById('burger'),hm=document.getElementById('hmenu');
+const shut=()=>{hm.classList.remove('open');bg.setAttribute('aria-expanded','false')};
+bg.onclick=()=>{const o=hm.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+hm.addEventListener('click',e=>{if(e.target.closest('a'))shut()});
+addEventListener('resize',()=>{if(innerWidth>900)shut()});
+addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
 const B=(f,a)=>`<span class="fr">${f}</span><span class="ar">${a}</span>`;
 document.getElementById('site-footer').innerHTML=`<div class="fin"><div class="fgrid">
  <div class="fbrand"><img class="foot-logo" src="logo.png" alt="Massar Al Ghad"><p>${B('École de formation et de perfectionnement à Hussein Dey, Alger : informatique, secrétariat, gestion et langues.','مدرسة للتكوين والتدريب بحسين داي، الجزائر العاصمة: الإعلام الآلي، الأمانة، التسيير واللغات.')}</p></div>

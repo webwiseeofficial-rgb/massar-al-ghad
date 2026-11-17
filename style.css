@@ -269,3 +269,25 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
 /* hero: less empty space under the header */
 .hero-in{padding-top:clamp(22px,2.6vw,44px);padding-bottom:clamp(96px,9vw,140px)}
 .hero-art{min-height:clamp(300px,26vw,400px)}
+
+/* ===== mobile header like EPC: brand + burger, menu opens as a panel ===== */
+#hmenu{display:contents}
+.burger{display:none;place-items:center;width:46px;height:46px;border:1px solid var(--line);border-radius:14px;background:#fff;cursor:pointer;padding:0}
+.blines{display:grid;gap:5px}.blines i{display:block;width:22px;height:2px;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.burger[aria-expanded=true] .blines i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] .blines i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] .blines i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:900px){
+ .top>div,html[dir=rtl] .top>div{flex-wrap:nowrap;justify-content:space-between;padding:10px var(--gx);min-height:0;gap:12px}
+ .top .brand{margin:0}.top .brand>span.bname{display:grid}
+ .top .logo-img{height:40px}.top .bname b{font-size:1.1rem}
+ .burger{display:grid}
+ #hmenu{display:none;position:absolute;inset-inline:0;top:100%;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--gx) 22px;box-shadow:0 20px 30px rgba(20,24,43,.08)}
+ #hmenu.open{display:flex}
+ #hmenu nav{order:0;flex-direction:column;width:auto;margin:0;padding:0;gap:0;overflow:visible;white-space:normal;font-size:1.05rem}
+ #hmenu nav a{padding:15px 2px;border-bottom:1px solid var(--line)}
+ #hmenu nav a[aria-current=page]::after{display:none}
+ #hmenu .cta{margin:18px 0 0;width:100%;justify-content:center;text-align:center;padding:14px 20px;font-size:1rem}
+ #hmenu .seg{margin:16px 0 0;align-self:flex-start}
+ #hmenu .seg button{padding:8px 20px;font-size:.85rem}
+}
