@@ -6,5 +6,5 @@ Static site, FR/AR (Plus Jakarta Sans + Almarai), ready for Vercel. Pages: `inde
 Courses in `common.js` are samples: edit them or use the `courses` table.
 
 ## Pages (public)
-`index.html` (accueil) · `formations.html` · `acces.html` · `inscription.html` · `contact.html`, plus `admin.html`.
+`index.html` (accueil) · `apropos.html` · `formations.html` · `acces.html` · `inscription.html` · `contact.html`, plus `admin.html`.
 Header/footer menu is shared: edit `layout.js`. Courses: `common.js`. Layout width: `--gx` and `.wrap` in `style.css`.

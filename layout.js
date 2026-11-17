@@ -1,7 +1,7 @@
 // Shared header + footer for all public pages. Edit the menu here once.
 (function(){
 const P=(location.pathname.split('/').pop()||'index').replace('.html','')||'index';
-const N=[['index','Accueil','الرئيسية'],['formations','Formations','التكوينات'],['acces','Accès','كيف تصلنا'],['inscription','Inscription','التسجيل'],['contact','Contact','اتصل بنا']];
+const N=[['index','Accueil','الرئيسية'],['apropos','À propos','من نحن'],['formations','Formations','التكوينات'],['acces','Accès','كيف تصلنا'],['inscription','Inscription','التسجيل'],['contact','Contact','اتصل بنا']];
 const links=cls=>N.filter(n=>!(cls&&n[0]=='inscription')).map(([k,f,a])=>`<a href="${k}.html"${P==k&&cls?' aria-current="page"':''}><span class="fr">${f}</span><span class="ar">${a}</span></a>`).join('');
 document.getElementById('site-header').innerHTML=`<div>
   <a class="brand" href="index.html"><img class="logo-img" src="logo-mark.png" alt=""><span><span class="fr">Massar Al Ghad</span><span class="ar">مسار الغد</span></span></a>
