@@ -292,3 +292,16 @@ html[dir=rtl] .hero-photo{border-radius:0 28px 28px 0;-webkit-mask-image:linear-
  #hmenu .seg button{padding:8px 20px;font-size:.85rem}
 }
 @media(max-width:900px){#hmenu .seg{align-self:center;margin-inline:auto}}
+
+/* ===== hero illustration (img/hero.jpg) =====
+   The artwork has a solid navy background, so it is shown as a rounded dark panel
+   (same navy family as the CTA band) instead of a cut-out. Mirrored in RTL. */
+.hero-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.hero-photo{background:#001029;overflow:hidden;-webkit-mask-image:none;mask-image:none;box-shadow:0 30px 70px rgba(16,20,42,.22)}
+html[dir=rtl] .hero-photo{-webkit-mask-image:none;mask-image:none}
+.hero-photo::before{content:"";position:absolute;inset:0;background:url(img/hero.jpg) 50% 50%/cover no-repeat}
+html[dir=rtl] .hero-photo::before{transform:scaleX(-1)}
+@media(min-width:1001px){
+ .hero-card{top:28px;transform:none;inset-inline-end:auto;inset-inline-start:calc(-1*clamp(0px,2vw,28px));width:min(270px,70%);padding:16px;gap:12px}
+}
+@media(max-width:1000px){.hero-in{grid-template-columns:1fr}}
