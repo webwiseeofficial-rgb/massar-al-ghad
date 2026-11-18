@@ -572,8 +572,7 @@ html[lang=fr] .fc2{top:82px}
  #hmenu .seg button{padding:6px 14px;font-size:.8rem}
 }
 
-/* ===== desktop/tablet: the blue circle stops where the hero ends, above "Nos domaines" ===== */
-@media(min-width:701px){
- .svcs{margin-top:0;padding-top:clamp(30px,3.2vw,50px)}
- .hero-in{padding-bottom:calc(clamp(96px,9vw,140px) - clamp(40px,4.5vw,70px))}
-}
+/* ===== blue circle is cut just above "Ce que nous enseignons" (layout untouched) ===== */
+.hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:calc(clamp(40px,4.5vw,70px) + 14px);background:#EEF1FF;z-index:2;pointer-events:none}
+@media(max-width:1000px){.hero::after{height:44px}}
+@media(max-width:700px){.hero::after{display:none}}
