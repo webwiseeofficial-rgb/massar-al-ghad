@@ -411,3 +411,25 @@ input:focus,select:focus,textarea:focus{outline:2px solid #7C4DFF;outline-offset
 /* header: "Inscription" button and active language stay black */
 .top .cta{background:var(--ink);box-shadow:none}.top .cta:hover{background:#262c4a;box-shadow:none}
 .seg button.on{background:var(--ink);color:#fff}
+
+/* ===== footer: dark, professional ===== */
+footer{position:relative;overflow:hidden;margin-top:clamp(40px,4.5vw,72px);color:#C9CEE8;border:0;border-image:none;border-radius:34px 34px 0 0;box-shadow:none;background:linear-gradient(160deg,#0E1230 0%,#171B45 55%,#2A2377 100%)}
+footer::before{content:"";position:absolute;width:560px;aspect-ratio:1;border-radius:50%;inset-inline-end:-180px;top:-260px;background:radial-gradient(circle,rgba(124,77,255,.35),rgba(124,77,255,0) 68%);pointer-events:none}
+footer .fin{position:relative;padding:clamp(44px,5vw,76px) var(--gx) 22px}
+footer .fgrid{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+footer .fbrand p{color:#AEB4D6;margin:18px 0 22px;max-width:28em;line-height:1.7}
+footer .foot-logo{height:70px;width:auto}
+footer .fbrand .btn{padding:10px 10px 10px 22px;border-radius:10px}html[dir=rtl] footer .fbrand .btn{padding:10px 22px 10px 10px}
+footer .fbrand .arr{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;display:grid;place-items:center}
+footer h4{position:relative;color:#fff;font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin:0 0 24px;padding-bottom:12px}
+footer h4::after{content:"";position:absolute;inset-inline-start:0;bottom:0;width:30px;height:3px;border-radius:3px;background:linear-gradient(90deg,#3B63F5,#7C4DFF)}
+footer .fcol{gap:13px;color:#C9CEE8}
+footer a{color:#C9CEE8;font-weight:500;transition:color .15s,transform .15s}
+footer a:hover{color:#fff}
+footer nav.fcol a:hover,footer .fcol>a:not(.fc):hover{transform:translateX(4px)}html[dir=rtl] footer nav.fcol a:hover,html[dir=rtl] footer .fcol>a:not(.fc):hover{transform:translateX(-4px)}
+footer .fc{display:flex;align-items:flex-start;gap:12px;line-height:1.5}
+footer .fc i{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+footer a.fc:hover i{background:var(--grad);border-color:transparent}
+footer .fc>span{padding-top:7px}
+footer .fbar{border-top:1px solid rgba(255,255,255,.12);color:#8F96BF;margin-top:clamp(36px,4vw,56px)}
+footer .fbar a{color:#C9CEE8;font-weight:600}
