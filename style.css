@@ -527,4 +527,22 @@ html[lang=fr] .fc2{top:82px}
  .mbar .m-wa{background:#25D366}
 }
 @media(max-width:1000px){footer .fgrid{grid-template-columns:1fr 1fr}footer .fbrand{grid-column:1/-1}}
-@media(max-width:700px){footer .fgrid{grid-template-columns:1fr;gap:24px}}
+
+/* mobile footer: compact */
+@media(max-width:700px){
+ footer{margin-top:28px;border-radius:24px 24px 0 0}
+ footer .fin{padding:26px var(--gx) 16px}
+ footer .fgrid{grid-template-columns:1fr 1fr;gap:20px 16px}
+ footer .fbrand{grid-column:1/-1;display:flex;align-items:center;gap:14px}
+ footer .foot-logo{height:48px;flex:none}
+ footer .fbrand p{margin:0;font-size:.8rem;line-height:1.5;max-width:none}
+ footer .fbrand .btn{display:none}
+ footer .fgrid>div:last-child{grid-column:1/-1}
+ footer h4{font-size:.72rem;margin:0 0 12px;padding-bottom:8px}
+ footer .fcol{gap:8px;font-size:.88rem}
+ footer .fgrid>div:last-child .fcol{grid-template-columns:1fr;gap:8px}
+ footer .fgrid>div:last-child .fct:nth-child(2){display:none}
+ footer .fct i{width:30px;height:30px;border-radius:8px}footer .fct i svg{width:15px;height:15px}
+ footer .fct>span{padding-top:5px;font-size:.85rem;color:#C9CEE8}
+ footer .fbar{margin-top:18px;padding-top:14px;font-size:.78rem}
+}
