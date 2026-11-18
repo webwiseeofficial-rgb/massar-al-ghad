@@ -407,3 +407,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid #7C4DFF;outline-offset
 .ring{background:conic-gradient(#5B3FD6 calc(var(--p)*1%),var(--tint) 0)}
 .col i.hi{background:linear-gradient(180deg,#7C4DFF,#3B63F5)}.st{background:#EFE9FF;color:#5B3FD6}
 .steps li::before{background:#EFE9FF;color:#5B3FD6}
+
+/* header: "Inscription" button and active language stay black */
+.top .cta{background:var(--ink);box-shadow:none}.top .cta:hover{background:#262c4a;box-shadow:none}
+.seg button.on{background:var(--ink);color:#fff}
