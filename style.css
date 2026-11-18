@@ -576,3 +576,7 @@ html[lang=fr] .fc2{top:82px}
 .hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:calc(clamp(40px,4.5vw,70px) + 14px);background:#EEF1FF;z-index:2;pointer-events:none}
 @media(max-width:1000px){.hero::after{height:44px}}
 @media(max-width:700px){.hero::after{display:none}}
+
+/* ===== "Nos domaines" section: same background as its heading (the hero's bottom colour), fading out softly at the bottom ===== */
+body{overflow-x:clip}
+.svcs::before{content:"";position:absolute;z-index:-1;top:0;bottom:calc(-1*clamp(26px,3vw,44px));left:calc(50% - 50vw);width:100vw;pointer-events:none;background:linear-gradient(180deg,#EEF1FF 0,#EEF1FF calc(100% - 80px),#F3F5FC 100%)}
