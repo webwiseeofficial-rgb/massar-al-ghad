@@ -586,9 +586,3 @@ body{overflow-x:clip}
 .bname small,.bname .ar{font-family:'Almarai',sans-serif}
 .top .bname b{font-weight:800}
 .top .bname small{font-weight:700}
-footer .foot-brand{display:flex;align-items:center;gap:14px;color:#fff}
-footer .foot-mark{height:56px;width:auto;display:block}
-footer .foot-brand .bname{display:grid;gap:2px;line-height:1.2}
-footer .foot-brand .bname b{font-size:1.45rem;font-weight:800;color:#fff}
-footer .foot-brand .bname small{font-size:1.1rem;font-weight:700;color:#C9CEE8}
-@media(max-width:600px){footer .foot-mark{height:46px}footer .foot-brand .bname b{font-size:1.25rem}}
