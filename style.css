@@ -509,6 +509,7 @@ html[lang=fr] .fc2{top:82px}
  /* formations: 2 per row */
  .grid,#featured,#grid{grid-template-columns:1fr 1fr;gap:12px}
  .panel{padding:16px}
+ body.home main .panel{background:none!important;padding:0!important;border:0!important;border-radius:0;box-shadow:none!important}
  .panel .head{flex-direction:column;align-items:flex-start;gap:8px}
  .course{padding:8px 8px 12px;border-radius:16px}
  .art{height:84px;margin-bottom:8px}
