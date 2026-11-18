@@ -17,7 +17,7 @@ addEventListener('resize',()=>{if(innerWidth>900)shut()});
 addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
 const B=(f,a)=>`<span class="fr">${f}</span><span class="ar">${a}</span>`;
 document.getElementById('site-footer').innerHTML=`<div class="fin"><div class="fgrid">
- <div class="fbrand"><img class="foot-logo" src="logo-light.png" alt="Massar Al Ghad"><p>${B('École de formation et de perfectionnement à Hussein Dey, Alger : informatique, secrétariat, gestion et langues.','مدرسة للتكوين والتدريب بحسين داي، الجزائر العاصمة: الإعلام الآلي، الأمانة، التسيير واللغات.')}</p><a class="btn" href="inscription.html">${B('Je m’inscris','سجّل الآن')}<b class="arr">→</b></a></div>
+ <div class="fbrand"><a class="brand foot-brand" href="index.html"><img class="foot-mark" src="logo-mark-light.png" alt=""><span class="bname"><b>Massar Al Ghad</b><small>مسار الغد</small></span></a><p>${B('École de formation et de perfectionnement à Hussein Dey, Alger : informatique, secrétariat, gestion et langues.','مدرسة للتكوين والتدريب بحسين داي، الجزائر العاصمة: الإعلام الآلي، الأمانة، التسيير واللغات.')}</p><a class="btn" href="inscription.html">${B('Je m’inscris','سجّل الآن')}<b class="arr">→</b></a></div>
  <div><h4>${B('Navigation','التصفح')}</h4><nav class="fcol">${links(0)}</nav></div>
  <div><h4>${B('Formations','التكوينات')}</h4><div class="fcol">
   <a href="formations.html?cat=info">${B('Informatique','الإعلام الآلي')}</a><a href="formations.html?cat=sec">${B('Secrétariat','الأمانة')}</a><a href="formations.html?cat=ges">${B('Gestion','التسيير')}</a><a href="formations.html?cat=lan">${B('Langues','اللغات')}</a></div></div>
