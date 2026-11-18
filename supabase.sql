@@ -9,3 +9,9 @@ create policy "admin reads registrations" on registrations for select to authent
 create policy "admin updates registrations" on registrations for update to authenticated using((auth.jwt()->>'email')='admin@example.com');
 create policy "admin manages courses" on courses for all to authenticated using((auth.jwt()->>'email')='admin@example.com') with check((auth.jwt()->>'email')='admin@example.com');
 -- Then: Authentication > Users > Add user (that e-mail + a strong password).
+
+-- ===== Admin plein écran (à exécuter si les tables existent déjà) =====
+-- Suppression d'inscriptions depuis l'admin :
+create policy "admin deletes registrations" on registrations for delete to authenticated using((auth.jwt()->>'email')='admin@example.com');
+-- Mise à jour en direct : une nouvelle inscription apparaît sans recharger la page :
+alter publication supabase_realtime add table registrations;

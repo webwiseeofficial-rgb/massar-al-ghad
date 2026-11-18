@@ -8,3 +8,7 @@ Courses in `common.js` are samples: edit them or use the `courses` table.
 ## Pages (public)
 `index.html` (accueil) · `apropos.html` · `formations.html` · `acces.html` · `inscription.html` · `contact.html`, plus `admin.html`.
 Header/footer menu is shared: edit `layout.js`. Courses: `common.js`. Layout width: `--gx` and `.wrap` in `style.css`.
+
+## Admin (admin.html)
+Full-screen dashboard (`admin.html`, `admin.css`, `admin.js`): dashboard, registrations (search, status filter, course filter, CSV export, call/WhatsApp, delete), courses.
+Works with Supabase (login + live updates) or in demo mode when `config.js` is empty. If your tables already exist, run the last two statements of `supabase.sql` (delete policy + realtime).
