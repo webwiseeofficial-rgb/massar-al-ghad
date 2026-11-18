@@ -477,7 +477,11 @@ html[lang=fr] .fc2{top:82px}
 @media(max-width:700px){
  body{padding-bottom:84px}
  /* hero: no image, text only, full-width CTAs */
- .hero-art{display:none!important}
+ .hero-art{display:grid!important;margin:8px 0 0!important;min-height:0}
+ .hero-art{margin-top:22px!important;min-height:min(84vw,380px);place-items:center;margin-bottom:-6px}
+ .mock{max-width:90%;margin-inline:auto;translate:0 -10px}
+ .orb{width:min(86vw,380px);inset-inline-end:auto;inset-inline-start:50%;translate:-50% 0;transform:translateY(-50%)}html[dir=rtl] .orb{translate:50% 0}
+ .hero-in{padding-bottom:24px}
  .hero-in{padding-top:26px;padding-bottom:36px}
  .hero h1{font-size:clamp(2.1rem,10vw,2.8rem)}
  .hero .lead{margin:14px 0 18px}
