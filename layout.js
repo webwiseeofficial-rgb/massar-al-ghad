@@ -26,4 +26,9 @@ document.getElementById('site-footer').innerHTML=`<div class="fin"><div class="f
   <a class="fct" href="https://wa.me/213541896856" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1112 20a8 8 0 01-3.8-1z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg></i><span>WhatsApp</span></a>
   <span class="fct"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><span>${B('Hussein Dey, Alger, en face du tramway Tripoli','حسين داي، الجزائر، أمام ترامواي طرابلس')}</span></span></div></div>
  </div><div class="fbar"><span>© 2026 ${B('Massar Al Ghad','مدرسة مسار الغد للتكوين والتدريب')}</span></div></div>`;
+
+const WAI='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1112 20a8 8 0 01-3.8-1z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg>';
+const mb=document.createElement('div');mb.className='mbar';
+mb.innerHTML=`<a class="m-reg" href="inscription.html">${B('S’inscrire','سجّل الآن')}</a><a class="m-wa" href="https://wa.me/213541896856" target="_blank" rel="noopener">${WAI}WhatsApp</a>`;
+if(P!='inscription')document.body.appendChild(mb);
 })();
