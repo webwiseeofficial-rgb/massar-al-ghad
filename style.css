@@ -571,3 +571,9 @@ html[lang=fr] .fc2{top:82px}
  #hmenu .seg{margin:0;align-self:center;padding:3px}
  #hmenu .seg button{padding:6px 14px;font-size:.8rem}
 }
+
+/* ===== desktop/tablet: the blue circle stops where the hero ends, above "Nos domaines" ===== */
+@media(min-width:701px){
+ .svcs{margin-top:0;padding-top:clamp(30px,3.2vw,50px)}
+ .hero-in{padding-bottom:calc(clamp(96px,9vw,140px) - clamp(40px,4.5vw,70px))}
+}
