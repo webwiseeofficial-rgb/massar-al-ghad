@@ -586,3 +586,8 @@ body{overflow-x:clip}
 .bname small,.bname .ar{font-family:'Almarai',sans-serif}
 .top .bname b{font-weight:800}
 .top .bname small{font-weight:700}
+
+/* Icônes SVG (remplacent les emojis) */
+.pcard i svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pcard i{color:#4A5BE8}.pcard:nth-child(2) i{color:#3B63F5}.pcard:nth-child(3) i{color:#7C4DFF}
+@media(max-width:520px){.pcard i svg{width:20px;height:20px}}
