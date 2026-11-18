@@ -19,4 +19,4 @@ if($('#form'))$('#form').onsubmit=async e=>{e.preventDefault();const f=e.target,
  if(error){m.textContent=T[LANG].err}else{f.reset();m.textContent=T[LANG].ok}};
 setLang(LANG);
 const LOCAL=[...COURSES];
-if(sb)sb.from('courses').select('*').order('sort').then(({data})=>{if(data&&data.length){COURSES=data.map(r=>({...r,img:r.img||(LOCAL.find(x=>x.fr==r.fr)||{}).img}));render()}});
+if(sb)sb.from('courses').select('*').order('sort').then(({data})=>{if(data&&data.length){COURSES=data.filter(r=>!r.hidden).map(r=>({...r,img:r.img||(LOCAL.find(x=>x.fr==r.fr)||{}).img}));render()}});

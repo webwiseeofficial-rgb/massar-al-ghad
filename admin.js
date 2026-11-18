@@ -1,7 +1,7 @@
 let ROWS=[],Q='',F='all',CF='',DEMO=false,VIEW='dash',SUBD=false;
 const ST={new:{fr:'Nouveau',ar:'جديد'},called:{fr:'Contacté',ar:'تم الاتصال'},ok:{fr:'Confirmé',ar:'مؤكد'}};
-const T={fr:{dash:'Tableau de bord',reg:'Inscriptions',crs:'Formations',hello:'Bonjour',hsub:'Voici l’activité des inscriptions de l’école.',total:'Inscriptions',neu:'Nouvelles',called:'Contactées',ok:'Confirmées',wk:'cette semaine',rate:'Taux',t14:'Inscriptions sur 14 jours',tst:'Répartition par statut',ttop:'Formations les plus demandées',trec:'Inscriptions récentes',all:'Tout voir',th:['Étudiant','Formation','Téléphone','E-mail','Message','Statut',''],empty:'Aucune inscription.',ph:'Rechercher un nom, un téléphone…',export:'Exporter CSV',allC:'Toutes les formations',tous:'Toutes',del:'Supprimer cette inscription ?',deleted:'Inscription supprimée.',noperm:'Suppression refusée : ajoutez la règle « delete » dans Supabase (voir supabase.sql).',unit:' inscrits',unit1:' inscrit',csub:'Les formations viennent de la table « courses » de Supabase (ou de common.js en mode démo).',see:'Voir les inscriptions',call:'Appeler',wa:'WhatsApp',rm:'Supprimer'},
-ar:{dash:'لوحة التحكم',reg:'التسجيلات',crs:'التكوينات',hello:'مرحبًا',hsub:'هذه حركة تسجيلات المدرسة.',total:'التسجيلات',neu:'جديدة',called:'تم الاتصال',ok:'مؤكدة',wk:'هذا الأسبوع',rate:'النسبة',t14:'التسجيلات خلال 14 يومًا',tst:'التوزيع حسب الحالة',ttop:'التكوينات الأكثر طلبًا',trec:'آخر التسجيلات',all:'عرض الكل',th:['الطالب','التكوين','الهاتف','البريد','الرسالة','الحالة',''],empty:'لا توجد تسجيلات.',ph:'ابحث عن اسم أو هاتف…',export:'تصدير CSV',allC:'كل التكوينات',tous:'الكل',del:'حذف هذا التسجيل؟',deleted:'تم حذف التسجيل.',noperm:'تم رفض الحذف: أضف قاعدة «delete» في Supabase (انظر supabase.sql).',unit:' مسجّل',unit1:' مسجّل',csub:'التكوينات تأتي من جدول «courses» في Supabase (أو من common.js في الوضع التجريبي).',see:'عرض التسجيلات',call:'اتصال',wa:'واتساب',rm:'حذف'}};
+const T={fr:{csub:'Ajoutez, modifiez, masquez ou supprimez les formations affichées sur le site.',addC:'Ajouter une formation',edit:'Modifier',hide:'Masquer',show:'Afficher',hiddenB:'Masquée',delC:'Supprimer cette formation ? Les inscriptions déjà reçues sont conservées.',saved:'Formation enregistrée.',cdeleted:'Formation supprimée.',nowHidden:'Formation masquée du site.',nowShown:'Formation de nouveau visible.',denied:'Action refusée par Supabase : vérifiez les règles (supabase-update.sql).',needImport:'Importez d’abord les formations d’exemple (bouton en haut).',importT:'La table « courses » est vide : le site affiche les formations d’exemple. Importez-les pour pouvoir les gérer.',importB:'Importer les formations d’exemple',imported:'Formations importées.',dash:'Tableau de bord',reg:'Inscriptions',crs:'Formations',hello:'Bonjour',hsub:'Voici l’activité des inscriptions de l’école.',total:'Inscriptions',neu:'Nouvelles',called:'Contactées',ok:'Confirmées',wk:'cette semaine',rate:'Taux',t14:'Inscriptions sur 14 jours',tst:'Répartition par statut',ttop:'Formations les plus demandées',trec:'Inscriptions récentes',all:'Tout voir',th:['Étudiant','Formation','Téléphone','E-mail','Message','Statut',''],empty:'Aucune inscription.',ph:'Rechercher un nom, un téléphone…',export:'Exporter CSV',allC:'Toutes les formations',tous:'Toutes',del:'Supprimer cette inscription ?',deleted:'Inscription supprimée.',noperm:'Suppression refusée : ajoutez la règle « delete » dans Supabase (voir supabase.sql).',unit:' inscrits',unit1:' inscrit',see:'Inscriptions',call:'Appeler',wa:'WhatsApp',rm:'Supprimer'},
+ar:{csub:'أضف التكوينات أو عدّلها أو أخفها أو احذفها من الموقع.',addC:'إضافة تكوين',edit:'تعديل',hide:'إخفاء',show:'إظهار',hiddenB:'مخفي',delC:'حذف هذا التكوين؟ تبقى التسجيلات المستلمة محفوظة.',saved:'تم حفظ التكوين.',cdeleted:'تم حذف التكوين.',nowHidden:'تم إخفاء التكوين من الموقع.',nowShown:'التكوين ظاهر من جديد.',denied:'رفض Supabase العملية: راجع القواعد (supabase-update.sql).',needImport:'استورد أولًا التكوينات التجريبية (الزر في الأعلى).',importT:'جدول «courses» فارغ: الموقع يعرض تكوينات تجريبية. استوردها لتتمكن من إدارتها.',importB:'استيراد التكوينات التجريبية',imported:'تم استيراد التكوينات.',dash:'لوحة التحكم',reg:'التسجيلات',crs:'التكوينات',hello:'مرحبًا',hsub:'هذه حركة تسجيلات المدرسة.',total:'التسجيلات',neu:'جديدة',called:'تم الاتصال',ok:'مؤكدة',wk:'هذا الأسبوع',rate:'النسبة',t14:'التسجيلات خلال 14 يومًا',tst:'التوزيع حسب الحالة',ttop:'التكوينات الأكثر طلبًا',trec:'آخر التسجيلات',all:'عرض الكل',th:['الطالب','التكوين','الهاتف','البريد','الرسالة','الحالة',''],empty:'لا توجد تسجيلات.',ph:'ابحث عن اسم أو هاتف…',export:'تصدير CSV',allC:'كل التكوينات',tous:'الكل',del:'حذف هذا التسجيل؟',deleted:'تم حذف التسجيل.',noperm:'تم رفض الحذف: أضف قاعدة «delete» في Supabase (انظر supabase.sql).',unit:' مسجّل',unit1:' مسجّل',see:'التسجيلات',call:'اتصال',wa:'واتساب',rm:'حذف'}};
 const IC={dash:'<rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>',
 reg:'<rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/>',
 crs:'<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>',
@@ -13,7 +13,7 @@ dl:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"
 phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
 chat:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',trash:'<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>',
 mail:'<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
-check:'<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>'};
+plus:'<path d="M5 12h14"/><path d="M12 5v14"/>',x:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',image:'<rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/>',edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/>',eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',eyeoff:'<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><path d="m2 2 20 20"/>',check:'<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>'};
 const ic=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ini=n=>(String(n||'?').trim().split(/\s+/).slice(0,2).map(w=>w[0]).join('')||'?').toUpperCase();
@@ -69,9 +69,60 @@ function renderReg(t){
  $('#csvT').textContent=t.export;
  $('#tbl-all').innerHTML=rowsHTML(filtered(),t,true)}
 function renderCrs(t){
- $('#csub').textContent=t.csub;
+ $('#csub').textContent=t.csub;$('#caddT').textContent=t.addC;
+ $('#cimport').hidden=!(sb&&!DEMO&&!DBC);$('#cimpT').textContent=t.importT;$('#cimpB').textContent=t.importB;
  const n={};ROWS.forEach(r=>{const k=course(r.course);const key=k?k.fr:r.course;n[key]=(n[key]||0)+1});
- $('#courses').innerHTML=COURSES.map(c=>{const k=CATS[c.cat]||CATS.info;return `<article class="a-course"><div class="cv" style="${c.img?`background-image:url('${esc(c.img)}')`:`background:linear-gradient(135deg,${k.c},${k.c2})`}"></div><div class="cb"><span class="a-tag" style="--t:${k.c};justify-self:start">${k[LANG]}</span><h4>${esc(c[LANG])}</h4><p>${esc(c.tools||'')}</p><div class="cf"><b>${(n[c.fr]||0)+((n[c.fr]||0)==1?t.unit1:t.unit)}</b><span>${dur(c.months,LANG)}</span></div><button type="button" data-course="${esc(c.fr)}">${t.see}</button></div></article>`}).join('')}
+ $('#courses').innerHTML=COURSES.map(c=>{const k=CATS[c.cat]||CATS.info,id=esc(cid(c)),m=n[c.fr]||0,bg=c.img?`background-image:url('${esc(c.img)}')`:`background:linear-gradient(135deg,${k.c},${k.c2})`;
+  return `<article class="a-course${c.hidden?' off':''}"><div class="cv" style="${bg}">${c.hidden?`<span class="a-off">${t.hiddenB}</span>`:''}</div><div class="cb"><span class="a-tag" style="--t:${k.c};justify-self:start">${k[LANG]}</span><h4>${esc(c[LANG]||c.fr)}</h4><p>${esc(c.tools||'')}</p><div class="cf"><b>${m+(m==1?t.unit1:t.unit)}</b><span>${dur(c.months,LANG)}</span></div><div class="a-cact"><button type="button" data-course="${esc(c.fr)}">${t.see}</button><span class="a-acts"><button class="a-act" type="button" data-cedit="${id}" title="${t.edit}" aria-label="${t.edit}">${ic('edit')}</button><button class="a-act" type="button" data-ctog="${id}" title="${c.hidden?t.show:t.hide}" aria-label="${c.hidden?t.show:t.hide}">${ic(c.hidden?'eyeoff':'eye')}</button><button class="a-act del" type="button" data-cdel="${id}" title="${t.rm}" aria-label="${t.rm}">${ic('trash')}</button></span></div></div></article>`}).join('')}
+
+/* ---------- gestion des formations ---------- */
+let DBC=false,EDIT=null,IMGBLOB=null,IMGURL='';
+const LOCAL=COURSES.map(c=>({...c}));
+const cid=c=>c.id!=null?c.id:c._id;
+const findC=id=>COURSES.find(c=>String(cid(c))==String(id));
+const sortC=()=>COURSES.sort((a,b)=>(a.sort||0)-(b.sort||0));
+const guardC=()=>{if(sb&&!DEMO&&!DBC){toast(tx().needImport,true);return false}return true};
+const thumb=v=>{$('#cthumb').style.backgroundImage=v?`url("${String(v).replace(/"/g,'%22')}")`:''};
+function openC(id){if(!guardC())return;EDIT=id?findC(id):null;IMGBLOB=null;IMGURL='';const f=$('#cform'),c=EDIT||{cat:'info',months:3,tools:'',img:'',sort:Math.max(0,...COURSES.map(x=>x.sort||0))+1,hidden:false,fr:'',ar:''};
+ $('#ccat').innerHTML=Object.keys(CATS).map(k=>`<option value="${k}">${CATS[k][LANG]}</option>`).join('');
+ f.fr.value=c.fr||'';f.ar.value=c.ar||'';f.cat.value=c.cat||'info';f.months.value=c.months||3;f.tools.value=c.tools||'';f.img.value=c.img||'';f.sort.value=c.sort||0;f.visible.checked=!c.hidden;
+ thumb(c.img);$('#cdTitle').textContent=EDIT?tx().edit:tx().addC;$('#cdlg').showModal()}
+async function shrink(file){const bm=await createImageBitmap(file),s=Math.min(1,1100/Math.max(bm.width,bm.height)),cv=document.createElement('canvas');cv.width=Math.round(bm.width*s);cv.height=Math.round(bm.height*s);cv.getContext('2d').drawImage(bm,0,0,cv.width,cv.height);return new Promise(r=>cv.toBlob(r,'image/jpeg',.85))}
+const readURL=b=>new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result);x.readAsDataURL(b)});
+async function toggleC(id){if(!guardC())return;const c=findC(id),h=!c.hidden;
+ if(sb&&!DEMO){const {data,error}=await sb.from('courses').update({hidden:h}).eq('id',c.id).select();if(error||!data||!data.length)return toast(error?error.message:tx().denied,true)}
+ c.hidden=h;render();toast(h?tx().nowHidden:tx().nowShown)}
+async function delC(id){if(!guardC())return;const c=findC(id);if(!confirm(tx().delC+'\n\n'+c[LANG]))return;
+ if(sb&&!DEMO){const {data,error}=await sb.from('courses').delete().eq('id',c.id).select();if(error||!data||!data.length)return toast(error?error.message:tx().denied,true)}
+ COURSES=COURSES.filter(x=>x!==c);render();toast(tx().cdeleted)}
+$('#cadd').onclick=()=>openC();
+$('#courses').onclick=e=>{const g=s=>e.target.closest(s);let b;
+ if(b=g('[data-cedit]'))openC(b.dataset.cedit);
+ else if(b=g('[data-ctog]'))toggleC(b.dataset.ctog);
+ else if(b=g('[data-cdel]'))delC(b.dataset.cdel);
+ else if(b=g('[data-course]')){CF=b.dataset.course;F='all';location.hash='#reg';renderReg(tx())}};
+$('#cdClose').onclick=$('#cCancel').onclick=()=>$('#cdlg').close();
+$('#cup').onclick=()=>$('#cfile').click();
+$('#cimg').oninput=e=>{IMGBLOB=null;thumb(e.target.value)};
+$('#cfile').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
+ try{IMGBLOB=await shrink(f);IMGURL=await readURL(IMGBLOB);$('#cimg').value='';thumb(IMGURL)}catch(err){toast(err.message,true)}};
+$('#cform').onsubmit=async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target)),btn=e.submitter,live=sb&&!DEMO;
+ const rec={fr:f.fr.trim(),ar:f.ar.trim(),cat:f.cat,months:+f.months||1,tools:f.tools.trim(),img:f.img.trim()||null,sort:+f.sort||0,hidden:!f.visible};
+ if(btn)btn.disabled=true;
+ try{
+  if(IMGBLOB){if(live){const path=`${Date.now()}-${Math.random().toString(36).slice(2,8)}.jpg`,up=await sb.storage.from('course-images').upload(path,IMGBLOB,{contentType:'image/jpeg'});if(up.error)throw up.error;rec.img=sb.storage.from('course-images').getPublicUrl(path).data.publicUrl}else rec.img=IMGURL}
+  const old=EDIT?EDIT.fr:null;
+  if(live){
+   if(EDIT){const {data,error}=await sb.from('courses').update(rec).eq('id',EDIT.id).select();if(error||!data||!data.length)throw error||new Error(tx().denied);Object.assign(EDIT,data[0]);
+    if(old!=rec.fr)await sb.from('registrations').update({course:rec.fr}).eq('course',old)}
+   else{const {data,error}=await sb.from('courses').insert(rec).select();if(error||!data||!data.length)throw error||new Error(tx().denied);COURSES.push(data[0])}
+  }else{if(EDIT)Object.assign(EDIT,rec);else COURSES.push({...rec,_id:'n'+Date.now()})}
+  if(old&&old!=rec.fr)ROWS.forEach(r=>{if(r.course==old)r.course=rec.fr});
+  sortC();$('#cdlg').close();render();toast(tx().saved)
+ }catch(err){toast(err.message||String(err),true)}
+ finally{if(btn)btn.disabled=false}};
+$('#cimpB').onclick=async()=>{const rows=LOCAL.map((c,i)=>({cat:c.cat,img:c.img||null,fr:c.fr,ar:c.ar,tools:c.tools||'',months:c.months,sort:i+1,hidden:false}));
+ const {data,error}=await sb.from('courses').insert(rows).select();if(error)return toast(error.message,true);COURSES=data;DBC=true;sortC();render();toast(tx().imported)};
 
 /* ---------- navigation ---------- */
 function show(v){if(!['dash','reg','crs'].includes(v))v='dash';VIEW=v;
@@ -85,7 +136,6 @@ $('#burger').onclick=()=>document.body.classList.toggle('menu');$('#scrim').oncl
 $('#q').oninput=e=>{Q=e.target.value;if(VIEW!='reg'){location.hash='#reg'}renderReg(tx())};
 $('#chips').onclick=e=>{const b=e.target.closest('[data-f]');if(b){F=b.dataset.f;renderReg(tx())}};
 $('#cf').onchange=e=>{CF=e.target.value;renderReg(tx())};
-$('#courses').onclick=e=>{const b=e.target.closest('[data-course]');if(b){CF=b.dataset.course;F='all';location.hash='#reg';renderReg(tx())}};
 async function setStatus(id,s){const r=ROWS.find(r=>r.id==id);if(!r)return;const old=r.status;r.status=s;render();
  if(sb&&!DEMO){const {data,error}=await sb.from('registrations').update({status:s}).eq('id',id).select();if(error||!data||!data.length){r.status=old;render();toast(error?error.message:'Update refused (RLS).',true)}}}
 async function del(id){if(!confirm(tx().del))return;
@@ -107,9 +157,9 @@ async function load(){if(DEMO){ROWS=demoRows();return}
 async function enter(session){$('#login').hidden=true;$('#app').hidden=false;
  const mail=session&&session.user&&session.user.email||'Admin';$('#meName').textContent=mail.split('@')[0];$('#meAv').textContent=ini(mail.split('@')[0]);
  if(DEMO)$('#demo').hidden=false;
- else{const c=await sb.from('courses').select('*').order('sort');if(c.data&&c.data.length)COURSES=c.data;
+ else{const c=await sb.from('courses').select('*').order('sort');if(c.data&&c.data.length){COURSES=c.data;DBC=true}
   if(!SUBD){SUBD=true;try{sb.channel('regs').on('postgres_changes',{event:'*',schema:'public',table:'registrations'},async()=>{await load();render()}).subscribe()}catch(e){}}}
- await load();show(location.hash.slice(1));render()}
+ COURSES.forEach((c,i)=>{if(c.id==null&&c._id==null)c._id='l'+i});await load();show(location.hash.slice(1));render()}
 $('#loginForm').onsubmit=async e=>{e.preventDefault();$('#lmsg').textContent='';const {data,error}=await sb.auth.signInWithPassword(Object.fromEntries(new FormData(e.target)));
  if(error)$('#lmsg').textContent=error.message;else enter(data.session)};
 $('#out').onclick=async e=>{e.preventDefault();if(sb)await sb.auth.signOut();location.href='index.html'};

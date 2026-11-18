@@ -14,7 +14,7 @@ let COURSES=[
 {cat:'ges',ico:'📦',img:'img/stock.jpg',fr:'Gestion de stock',ar:'تسيير المخزون',tools:'Inventaire · Excel',months:1},
 {cat:'lan',ico:'🇫🇷',img:'img/francais.jpg',fr:'Français professionnel',ar:'الفرنسية المهنية',tools:'Oral · Écrit · CV',months:3},
 {cat:'lan',ico:'🇬🇧',img:'img/anglais.jpg',fr:'Anglais',ar:'الإنجليزية',tools:'Conversation · Business',months:3}];
-const artIn=c=>c.img?`<img src="${c.img}" alt="" loading="lazy">`:c.ico;
+const artIn=c=>c.img?`<img src="${c.img}" alt="" loading="lazy">`:(c.ico||'');
 const dur=(m,l)=>l=='fr'?m+' mois':m==1?'شهر':m==2?'شهران':m+' أشهر';
 let LANG=localStorage.getItem('lang')||'fr';
 const sb=(window.CFG&&CFG.SUPABASE_URL&&window.supabase)?supabase.createClient(CFG.SUPABASE_URL,CFG.SUPABASE_ANON_KEY):null;

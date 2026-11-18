@@ -86,13 +86,38 @@
 
       <!-- Formations -->
       <section id="v-crs" hidden>
-        <div class="a-hello"><p id="csub"></p></div>
+        <div class="a-toolbar"><p class="a-sub" id="csub"></p><button class="a-btn a-sm" id="cadd" type="button"><i data-ic="plus"></i><span id="caddT"></span></button></div>
+        <div class="a-note a-info" id="cimport" hidden><span id="cimpT"></span><button class="a-btn a-sm" id="cimpB" type="button"></button></div>
         <div class="a-courses" id="courses"></div>
       </section>
     </div>
   </div>
 </div>
 
+
+<dialog class="a-dlg" id="cdlg">
+  <form id="cform" autocomplete="off">
+    <div class="a-dhead"><h2 id="cdTitle"></h2><button class="a-icon" type="button" id="cdClose" aria-label="Close"><i data-ic="x"></i></button></div>
+    <div class="a-fgrid">
+      <label><span><span class="fr">Nom (français)</span><span class="ar">الاسم (بالفرنسية)</span></span><input name="fr" required></label>
+      <label><span><span class="fr">Nom (arabe)</span><span class="ar">الاسم (بالعربية)</span></span><input name="ar" required dir="rtl"></label>
+      <label><span><span class="fr">Catégorie</span><span class="ar">الفئة</span></span><select name="cat" id="ccat"></select></label>
+      <label><span><span class="fr">Durée (mois)</span><span class="ar">المدة (بالأشهر)</span></span><input name="months" type="number" min="1" max="36" value="3" required></label>
+      <label class="wide"><span><span class="fr">Contenu / outils</span><span class="ar">المحتوى / الأدوات</span></span><input name="tools" placeholder="Word · Excel · PowerPoint"></label>
+      <div class="wide a-imgrow">
+        <div class="a-thumb" id="cthumb"></div>
+        <div class="a-imgf">
+          <label><span><span class="fr">Image (lien)</span><span class="ar">الصورة (رابط)</span></span><input name="img" id="cimg" dir="ltr" placeholder="https://… ou img/photo.jpg"></label>
+          <button type="button" class="a-pill" id="cup"><i data-ic="image"></i><span class="fr">Téléverser une image</span><span class="ar">رفع صورة</span></button>
+          <input type="file" id="cfile" accept="image/*" hidden>
+        </div>
+      </div>
+      <label><span><span class="fr">Ordre d’affichage</span><span class="ar">ترتيب العرض</span></span><input name="sort" type="number" min="0" value="0"></label>
+      <label class="a-check"><input name="visible" type="checkbox" checked><span><span class="fr">Visible sur le site</span><span class="ar">ظاهرة في الموقع</span></span></label>
+    </div>
+    <div class="a-dfoot"><button class="a-pill" type="button" id="cCancel"><span class="fr">Annuler</span><span class="ar">إلغاء</span></button><button class="a-btn" type="submit"><span class="fr">Enregistrer</span><span class="ar">حفظ</span><b class="arr">→</b></button></div>
+  </form>
+</dialog>
 <div class="a-toast" id="toast" role="status" hidden></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script src="config.js"></script><script src="common.js"></script><script src="admin.js?v=1"></script>
