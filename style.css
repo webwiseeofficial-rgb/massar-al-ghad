@@ -591,15 +591,3 @@ body{overflow-x:clip}
 .pcard i svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .pcard i{color:#4A5BE8}.pcard:nth-child(2) i{color:#3B63F5}.pcard:nth-child(3) i{color:#7C4DFF}
 @media(max-width:520px){.pcard i svg{width:20px;height:20px}}
-
-/* FAQ */
-.faq{padding:clamp(40px,5vw,72px) var(--gx) 0}
-.faq-l{max-width:820px;margin:0 auto;display:grid;gap:12px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:box-shadow .2s}
-.faq details[open]{box-shadow:0 10px 30px rgba(30,50,120,.08)}
-.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-weight:700;color:var(--ink)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--tint);color:var(--blue);font-size:1.2rem;font-weight:700;transition:transform .2s}
-.faq details[open] summary::after{content:"–";background:var(--grad);color:#fff}
-.faq p{margin:0;padding:0 22px 20px;color:var(--mut);line-height:1.7}
-.faq summary:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
