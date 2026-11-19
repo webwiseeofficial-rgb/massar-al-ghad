@@ -94,10 +94,10 @@ html[dir=rtl] .a-side a.on::before{border-radius:4px 0 0 4px}
 
 /* tableaux */
 .a-tbl{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:720px}
-th{text-align:start;color:var(--mut);font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:14px 16px;background:#FAFBFF;border-bottom:1px solid var(--line)}
-td{white-space:nowrap;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:middle}tr:last-child td{border-bottom:0}tbody tr:hover td{background:#FAFBFF}
+th{text-align:start;color:var(--mut);font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:14px 13px;background:#FAFBFF;border-bottom:1px solid var(--line)}
+td{white-space:nowrap;padding:12px 13px;border-bottom:1px solid var(--line);vertical-align:middle}tr:last-child td{border-bottom:0}tbody tr:hover td{background:#FAFBFF}
 .a-who{display:flex;gap:12px;align-items:center}.a-who b{display:block}.a-who small,td small{display:block;color:var(--mut);font-weight:500}
-.a-msg{max-width:200px;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.a-msg{max-width:130px;color:var(--mut);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .a-tag{display:inline-block;border-radius:99px;padding:4px 12px;font-weight:800;font-size:.8rem;color:var(--t);background:var(--soft);background:color-mix(in srgb,var(--t) 12%,#fff);white-space:nowrap}
 .a-st{border:0;border-radius:99px;padding:6px 12px;font-weight:800;background:var(--soft);color:var(--violet)}
 .a-st[data-s=new]{background:var(--rose);color:var(--pink)}.a-st[data-s=called]{background:#FFF1DC;color:#B26A00}.a-st[data-s=ok]{background:#DDF6E8;color:var(--green)}

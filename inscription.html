@@ -17,8 +17,9 @@
 <section class="two wide"><div class="panel" id="inscription"><form id="form">
 <label><span class="fr">Nom et prénom</span><span class="ar">الاسم واللقب</span><input name="name" required minlength="2" autocomplete="name"></label>
 <label><span class="fr">Téléphone</span><span class="ar">رقم الهاتف</span><input name="phone" type="tel" required minlength="8" dir="ltr" autocomplete="tel"></label>
+<label><span class="fr">Date de naissance</span><span class="ar">تاريخ الميلاد</span><input name="birthdate" type="date" required min="1930-01-01" dir="ltr" autocomplete="bday"></label>
 <label><span class="fr">E-mail (facultatif)</span><span class="ar">البريد الإلكتروني (اختياري)</span><input name="email" type="email" dir="ltr"></label>
-<label><span class="fr">Formation</span><span class="ar">التكوين</span><select name="course" id="course"></select></label>
+<label class="full"><span class="fr">Formation</span><span class="ar">التكوين</span><select name="course" id="course"></select></label>
 <label class="full"><span class="fr">Message (facultatif)</span><span class="ar">رسالة (اختياري)</span><textarea name="message" rows="3"></textarea></label>
 <button class="btn dark" type="submit"><span class="fr">Envoyer ma demande</span><span class="ar">أرسل طلبي</span><b class="arr">→</b></button><p id="msg" role="status"></p></form></div>
 <div class="panel"><h2><span class="fr">Comment ça marche</span><span class="ar">كيف يتم ذلك</span></h2><ol class="steps">

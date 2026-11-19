@@ -7,8 +7,9 @@ create or replace function public.is_admin() returns boolean language sql stable
 $$;
 
 create table if not exists courses(id bigint generated always as identity primary key,cat text check(cat in('info','sec','ges','lan')),ico text,img text,fr text,ar text,tools text,months int,sort int default 0,hidden boolean default false);
-create table if not exists registrations(id bigint generated always as identity primary key,created_at timestamptz default now(),name text not null,phone text not null,email text,course text,message text,lang text,status text default 'new' check(status in('new','called','ok')));
+create table if not exists registrations(id bigint generated always as identity primary key,created_at timestamptz default now(),name text not null,phone text not null,email text,course text,message text,lang text,birthdate date,status text default 'new' check(status in('new','called','ok')));
 alter table courses add column if not exists hidden boolean default false;
+alter table registrations add column if not exists birthdate date;
 alter table courses enable row level security;
 alter table registrations enable row level security;
 

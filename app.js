@@ -13,10 +13,12 @@ const SI={'info': '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"/>', 'sec': 
  if($('#svc'))$('#svc').innerHTML=Object.keys(CATS).map(k=>{const L=COURSES.filter(c=>c.cat==k).slice(0,5);return `<article class="sv" style="--c:${CATS[k].c}"><div class="sv-h"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${SI[k]}</svg></i><b>${CATS[k][l]}</b></div><p>${SD[k][l]}</p><ul>${L.map(c=>`<li>${c[l]}</li>`).join('')}</ul><a class="sv-img" href="formations.html?cat=${k}"><img src="${CIMG[k]}" alt="" loading="lazy"></a></article>`}).join('');
  if($('#course')){const cur=$('#course').value||QS.get('course')||'';$('#course').innerHTML=`<option value="">${T[l].pick}</option>`+COURSES.map(c=>`<option value="${c.fr}">${c[l]}</option>`).join('');$('#course').value=cur}}
 if($('#chips'))$('#chips').onclick=e=>{const k=e.target.dataset.k;if(k){CAT=k;render()}};
-if($('#form'))$('#form').onsubmit=async e=>{e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f)),m=$('#msg');d.lang=LANG;d.course=d.course||'Contact';
- if(!sb){open('https://wa.me/213541896856?text='+encodeURIComponent(`${d.name} | ${d.phone} | ${d.course}${d.message?' | '+d.message:''}`),'_blank');return}
+if($('#form'))$('#form').onsubmit=async e=>{e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f)),m=$('#msg');d.lang=LANG;d.course=d.course||'Contact';if(!d.birthdate)delete d.birthdate;
+ if(!sb){open('https://wa.me/213541896856?text='+encodeURIComponent(`${d.name} | ${d.phone} | ${d.course}${d.birthdate?' | '+d.birthdate:''}${d.message?' | '+d.message:''}`),'_blank');return}
  m.textContent=T[LANG].send;const {error}=await sb.from('registrations').insert(d);
  if(error){m.textContent=T[LANG].err}else{f.reset();m.textContent=T[LANG].ok}};
 setLang(LANG);
 const LOCAL=[...COURSES];
 if(sb)sb.from('courses').select('*').order('sort').then(({data})=>{if(data&&data.length){COURSES=data.filter(r=>!r.hidden).map(r=>({...r,img:r.img||(LOCAL.find(x=>x.fr==r.fr)||{}).img}));render()}});
+
+if($('[name=birthdate]'))$('[name=birthdate]').max=new Date().toISOString().slice(0,10);
