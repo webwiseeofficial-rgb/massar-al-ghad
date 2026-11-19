@@ -512,6 +512,7 @@ html[lang=fr] .fc2{top:82px}
  body.home main .panel{background:none!important;padding:0!important;border:0!important;border-radius:0;box-shadow:none!important}
  .panel.flat{background:none!important;padding:0!important;border:0!important;border-radius:0;box-shadow:none!important}
  .chips{gap:8px;margin-bottom:18px}.chip{padding:8px 16px;font-size:.88rem}
+ #inscription{padding:18px}#inscription form{gap:12px}#inscription label{gap:5px;font-size:.88rem}#inscription input,#inscription select,#inscription textarea{padding:10px 14px;font-size:.95rem}#inscription textarea{height:64px;resize:none}#inscription form .btn{padding-block:10px}
  .panel .head{flex-direction:column;align-items:flex-start;gap:8px}
  .course{padding:8px 8px 12px;border-radius:16px}
  .art{height:84px;margin-bottom:8px}
