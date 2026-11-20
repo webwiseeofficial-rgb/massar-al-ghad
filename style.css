@@ -623,3 +623,17 @@ footer .foot-brand .bname{display:grid;gap:2px;line-height:1.2}
 footer .foot-brand .bname b{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-.01em}
 footer .foot-brand .bname small{font-family:'Almarai',sans-serif;font-size:1.08rem;font-weight:700;color:#BBD3FF}
 @media(max-width:600px){footer .foot-brand .logo-img{height:40px}footer .foot-brand .bname b{font-size:1.2rem}}
+
+/* menu mobile : un peu plus grand */
+@media(max-width:900px){
+ .burger{width:46px;height:46px;border-radius:14px}
+ .blines{gap:5px}.blines i{width:22px}
+ .burger[aria-expanded=true] .blines i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+ .burger[aria-expanded=true] .blines i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+ #hmenu{padding:4px var(--gx) 18px;max-height:calc(100dvh - 66px)}
+ #hmenu nav{font-size:1.08rem;line-height:1.35}
+ #hmenu nav a{padding:15px 2px;font-weight:600}
+ #hmenu nav a[aria-current=page]{font-weight:800}
+ #hmenu .cta{padding:14px 22px;font-size:1.02rem}
+ #hmenu .seg{padding:4px}#hmenu .seg button{padding:9px 18px;font-size:.9rem}
+}
