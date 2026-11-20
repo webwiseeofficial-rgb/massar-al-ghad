@@ -20,4 +20,5 @@ Description (FR/AR) and video (YouTube, Vimeo, Facebook link, or MP4 upload up t
 Home page: tick "Afficher sur la page d'accueil" in Admin > Formations > edit to choose the courses shown in "Les formations les plus demandées" (up to 8; none ticked = one per domain, as before). Needs the `featured` column (re-run `supabase.sql`).
 
 ## Brand
-Logo = graduation cap (`logo-mark.svg`, `logo-mark-light.svg` for dark backgrounds, `favicon.svg/png`). Ready-to-upload files for Facebook/Instagram profile pictures are in `brand/` (`profile-blue.png`, `profile-white.png`). Palette: blue `#3B63F5`, sky `#38A3FF`, deep `#1C3F9E`, navy `#0A1A47`.
+Logo = graduation cap + name. Files: `logo.svg` (full lockup, dark text), `logo-light.svg` (for dark backgrounds, used in the footer), `logo-compact.svg` (no tagline, used in the header), `logo-mark.svg` / `logo-mark-light.svg` (cap only), `favicon.svg/png`. All text is converted to outlines (no font needed). Same files in `brand/`, plus ready-to-upload Facebook/Instagram profile pictures (`profile-blue.png`, `profile-white.png`). Palette: blue `#2F5BEA`, navy `#0B1F4D`, gold `#F5A524` (site accent `#3B63F5`).
+Footer social links (Facebook, Instagram) are in `layout.js`.
