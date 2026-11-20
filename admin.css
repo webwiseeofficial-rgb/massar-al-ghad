@@ -159,3 +159,4 @@ td{white-space:nowrap;padding:12px 13px;border-bottom:1px solid var(--line);vert
 .a-dlg textarea{border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:11px 14px;width:100%;resize:vertical;font:inherit}
 .a-dlg textarea:focus{outline:2px solid var(--violet2);background:#fff}
 .a-vidrow{display:grid;gap:10px;justify-items:start}.a-vidrow label{width:100%}.a-vidrow .a-pill{display:inline-flex;gap:8px;align-items:center}
+.a-feat{position:absolute;inset-block-start:10px;inset-inline-end:10px;background:var(--violet);color:#fff;border-radius:99px;padding:3px 12px;font-size:.75rem;font-weight:800}

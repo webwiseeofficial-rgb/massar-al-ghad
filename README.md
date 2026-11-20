@@ -16,3 +16,5 @@ Courses can be added, edited, hidden or deleted from the Formations tab (image u
 ## Page d'une formation (formation.html)
 Each course card opens `formation.html?c=<id>`: promo video, description, registration form (course pre-filled) and 3 other courses.
 Description (FR/AR) and video (YouTube, Vimeo, Facebook link, or MP4 upload up to 50 MB) are edited from Admin > Formations > edit. Re-run `supabase.sql` once to add the columns and the `course-videos` bucket.
+
+Home page: tick "Afficher sur la page d'accueil" in Admin > Formations > edit to choose the courses shown in "Les formations les plus demandées" (up to 8; none ticked = one per domain, as before). Needs the `featured` column (re-run `supabase.sql`).

@@ -6,12 +6,13 @@ create or replace function public.is_admin() returns boolean language sql stable
   select lower(coalesce(auth.jwt()->>'email',''))=lower('admin@example.com')
 $$;
 
-create table if not exists courses(id bigint generated always as identity primary key,cat text check(cat in('info','sec','ges','lan')),ico text,img text,fr text,ar text,tools text,months int,sort int default 0,hidden boolean default false,video text,desc_fr text,desc_ar text);
+create table if not exists courses(id bigint generated always as identity primary key,cat text check(cat in('info','sec','ges','lan')),ico text,img text,fr text,ar text,tools text,months int,sort int default 0,hidden boolean default false,video text,desc_fr text,desc_ar text,featured boolean default false);
 create table if not exists registrations(id bigint generated always as identity primary key,created_at timestamptz default now(),name text not null,phone text not null,email text,course text,message text,lang text,birthdate date,status text default 'new' check(status in('new','called','ok')));
 alter table courses add column if not exists hidden boolean default false;
 alter table courses add column if not exists video text;
 alter table courses add column if not exists desc_fr text;
 alter table courses add column if not exists desc_ar text;
+alter table courses add column if not exists featured boolean default false;
 alter table registrations add column if not exists birthdate date;
 alter table courses enable row level security;
 alter table registrations enable row level security;
@@ -54,5 +55,8 @@ create policy "public reads course videos" on storage.objects for select using(b
 create policy "admin uploads course videos" on storage.objects for insert to authenticated with check(bucket_id='course-videos' and public.is_admin());
 create policy "admin updates course videos" on storage.objects for update to authenticated using(bucket_id='course-videos' and public.is_admin());
 create policy "admin deletes course videos" on storage.objects for delete to authenticated using(bucket_id='course-videos' and public.is_admin());
+
+-- Rafraîchit le cache de Supabase pour qu'il voie les nouvelles colonnes
+notify pgrst, 'reload schema';
 
 -- Puis : Authentication > Users > Add user (cet e-mail + un mot de passe fort).
