@@ -18,3 +18,6 @@ Each course card opens `formation.html?c=<id>`: promo video, description, regist
 Description (FR/AR) and video (YouTube, Vimeo, Facebook link, or MP4 upload up to 50 MB) are edited from Admin > Formations > edit. Re-run `supabase.sql` once to add the columns and the `course-videos` bucket.
 
 Home page: tick "Afficher sur la page d'accueil" in Admin > Formations > edit to choose the courses shown in "Les formations les plus demandées" (up to 8; none ticked = one per domain, as before). Needs the `featured` column (re-run `supabase.sql`).
+
+## Brand
+Logo = graduation cap (`logo-mark.svg`, `logo-mark-light.svg` for dark backgrounds, `favicon.svg/png`). Ready-to-upload files for Facebook/Instagram profile pictures are in `brand/` (`profile-blue.png`, `profile-white.png`). Palette: blue `#3B63F5`, sky `#38A3FF`, deep `#1C3F9E`, navy `#0A1A47`.
