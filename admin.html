@@ -104,6 +104,13 @@
       <label><span><span class="fr">Catégorie</span><span class="ar">الفئة</span></span><select name="cat" id="ccat"></select></label>
       <label><span><span class="fr">Durée (mois)</span><span class="ar">المدة (بالأشهر)</span></span><input name="months" type="number" min="1" max="36" value="3" required></label>
       <label class="wide"><span><span class="fr">Contenu / outils</span><span class="ar">المحتوى / الأدوات</span></span><input name="tools" placeholder="Word · Excel · PowerPoint"></label>
+      <label class="wide"><span><span class="fr">Description (français)</span><span class="ar">الوصف (بالفرنسية)</span></span><textarea name="desc_fr" rows="3"></textarea></label>
+      <label class="wide"><span><span class="fr">Description (arabe)</span><span class="ar">الوصف (بالعربية)</span></span><textarea name="desc_ar" rows="3" dir="rtl"></textarea></label>
+      <div class="wide a-vidrow">
+        <label><span><span class="fr">Vidéo promotionnelle (lien YouTube, Vimeo, Facebook ou fichier MP4)</span><span class="ar">الفيديو الترويجي (رابط يوتيوب أو فيميو أو فيسبوك أو ملف MP4)</span></span><input name="video" id="cvid" dir="ltr" placeholder="https://youtu.be/…"></label>
+        <button type="button" class="a-pill" id="cvup"><i data-ic="video"></i><span class="fr">Téléverser une vidéo (50 Mo max)</span><span class="ar">رفع فيديو (50 ميغا كحد أقصى)</span></button>
+        <input type="file" id="cvfile" accept="video/mp4,video/webm" hidden>
+      </div>
       <div class="wide a-imgrow">
         <div class="a-thumb" id="cthumb"></div>
         <div class="a-imgf">

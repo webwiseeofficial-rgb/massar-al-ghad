@@ -1,6 +1,6 @@
 // Shared header + footer for all public pages. Edit the menu here once.
 (function(){
-const P=(location.pathname.split('/').pop()||'index').replace('.html','')||'index';
+const P0=(location.pathname.split('/').pop()||'index').replace('.html','')||'index',P=P0=='formation'?'formations':P0;
 const N=[['index','Accueil','الرئيسية'],['apropos','À propos','من نحن'],['formations','Formations','التكوينات'],['acces','Accès','كيف تصلنا'],['inscription','Inscription','التسجيل'],['contact','Contact','اتصل بنا']];
 const links=cls=>N.filter(n=>!(cls&&n[0]=='inscription')).map(([k,f,a])=>`<a href="${k}.html"${P==k&&cls?' aria-current="page"':''}><span class="fr">${f}</span><span class="ar">${a}</span></a>`).join('');
 document.getElementById('site-header').innerHTML=`<div>

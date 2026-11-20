@@ -12,3 +12,7 @@ Header/footer menu is shared: edit `layout.js`. Courses: `common.js`. Layout wid
 ## Admin (admin.html)
 Full-screen dashboard (`admin.html`, `admin.css`, `admin.js`): dashboard, registrations (search, status filter, course filter, CSV export, call/WhatsApp, delete), courses.
 Courses can be added, edited, hidden or deleted from the Formations tab (image upload goes to the `course-images` Storage bucket). Works with Supabase (login + live updates) or in demo mode when `config.js` is empty. Run `supabase.sql` once (set your admin e-mail on line 6): it works on a new or an existing project and can be re-run safely. On first use, click "Importer les formations d'exemple" in the Formations tab.
+
+## Page d'une formation (formation.html)
+Each course card opens `formation.html?c=<id>`: promo video, description, registration form (course pre-filled) and 3 other courses.
+Description (FR/AR) and video (YouTube, Vimeo, Facebook link, or MP4 upload up to 50 MB) are edited from Admin > Formations > edit. Re-run `supabase.sql` once to add the columns and the `course-videos` bucket.

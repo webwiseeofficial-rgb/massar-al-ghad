@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l;document.documentElement.dir=l=='ar'?'rtl':'ltr'}}catch(e){}</script>
+<title>Formation | Massar Al Ghad | مدرسة مسار الغد</title>
+<meta name="description" content="Réservez votre place à l’école Massar Al Ghad, Hussein Dey. | احجز مكانك في مدرسة مسار الغد.">
+<link rel="icon" type="image/png" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+<header class="top" id="site-header"></header>
+<main class="wrap" id="cpage">
+<p class="cp-crumb"><a href="formations.html"><span class="fr">← Toutes les formations</span><span class="ar">→ كل التكوينات</span></a></p>
+<section class="banner slim cp-banner" id="chero"></section>
+<div id="cbody">
+<section class="cp-grid">
+<div class="cp-main"><div id="cvideo"></div><div class="panel" id="cdesc"></div></div>
+<aside class="panel cp-form" id="inscription">
+<h2><span class="fr">Je m’inscris à cette formation</span><span class="ar">أسجّل في هذا التكوين</span></h2>
+<p class="cp-formname" id="cformname"></p>
+<form id="form">
+<input type="hidden" name="course" id="ccourse">
+<label><span class="fr">Nom et prénom</span><span class="ar">الاسم واللقب</span><input name="name" required minlength="2" autocomplete="name"></label>
+<label><span class="fr">Téléphone</span><span class="ar">رقم الهاتف</span><input name="phone" type="tel" required minlength="8" dir="ltr" autocomplete="tel"></label>
+<label><span class="fr">Date de naissance</span><span class="ar">تاريخ الميلاد</span><input name="birthdate" type="date" required min="1930-01-01" dir="ltr" autocomplete="bday"></label>
+<label><span class="fr">E-mail (facultatif)</span><span class="ar">البريد الإلكتروني (اختياري)</span><input name="email" type="email" dir="ltr"></label>
+<label class="full"><span class="fr">Message (facultatif)</span><span class="ar">رسالة (اختياري)</span><textarea name="message" rows="3"></textarea></label>
+<button class="btn dark" type="submit"><span class="fr">Envoyer ma demande</span><span class="ar">أرسل طلبي</span><b class="arr">→</b></button><p id="msg" role="status"></p></form>
+</aside>
+</section>
+<section class="cp-more"><h2 id="cmoreT"></h2><div class="grid" id="cgridmore"></div></section>
+</div>
+</main>
+<footer id="site-footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script><script src="layout.js?v=5"></script><script src="common.js"></script><script src="app.js"></script>
+</body></html>
